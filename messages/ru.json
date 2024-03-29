@@ -455,5 +455,18 @@
 		"Errors": {
 			"missingCode": "Извините, но вход не может быть завершен. Если случится неожиданное, попробуйте еще раз, иначе вы можете вернуться домой."
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
 	}
 }
