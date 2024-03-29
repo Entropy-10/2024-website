@@ -455,5 +455,18 @@
 		"Errors": {
 			"missingCode": "ログインできませんでした。申し訳ありませんが、もう一度試すか、ホームに戻ってください。"
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
 	}
 }
