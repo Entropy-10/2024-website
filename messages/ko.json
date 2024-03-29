@@ -455,5 +455,18 @@
 		"Errors": {
 			"missingCode": "죄송하지만, 로그인을 완료할 수 없었습니다. 예상치 못한 문제라면 다시 시도해 주세요. 그렇지 않다면 홈으로 돌아가는 것을 권장합니다."
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
 	}
 }
