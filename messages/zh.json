@@ -455,5 +455,18 @@
 		"Errors": {
 			"missingCode": "抱歉，登录无法完成。您可以选择再次尝试，或者返回主页。"
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
 	}
 }
