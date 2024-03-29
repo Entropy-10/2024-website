@@ -26,6 +26,7 @@
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.39.7",
     "@t3-oss/env-nextjs": "^0.8.0",
+    "@vercel/edge-config": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",

@@ -1,8 +1,14 @@
 import { createMetadata } from '@metadata'
-import { getTranslations } from 'next-intl/server'
+import { get } from '@vercel/edge-config'
+import { getMessages, getTranslations } from 'next-intl/server'
 
 import type { MetadataProps } from '@types'
-import ComingSoon from '~/components/coming-soon'
+import { pick } from 'lodash'
+import { NextIntlClientProvider } from 'next-intl'
+import Background from '~/components/ui/background'
+import HeaderDivider from '~/components/ui/divider'
+import Heading from '~/components/ui/heading'
+import MappoolContainer from './_components/mappool-container'
 
 export async function generateMetadata({ params: { locale } }: MetadataProps) {
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
@@ -13,6 +19,21 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 	})
 }
 
-export default function MappoolPage() {
-	return <ComingSoon />
+export default async function MappoolPage() {
+	const t = await getTranslations('MappoolPage')
+	const messages = await getMessages()
+	const defaultRound = (await get('defaultRound'))?.toString()
+
+	return (
+		<div className='relative'>
+			<Background className='py-8'>
+				<Heading>{t('heading')}</Heading>
+				<HeaderDivider className='max-w-[180px] lg:max-w-[360px] md:max-w-[310px] sm:max-w-[280px]' />
+			</Background>
+
+			<NextIntlClientProvider messages={pick(messages, 'MappoolPage')}>
+				<MappoolContainer defaultRound={defaultRound} />
+			</NextIntlClientProvider>
+		</div>
+	)
 }

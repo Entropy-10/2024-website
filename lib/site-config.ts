@@ -137,3 +137,13 @@ export const utcOptions = [
 	'UTC+13',
 	'UTC+14'
 ]
+
+export const rounds = [
+	'qualifiers',
+	'round of 32',
+	'round of 16',
+	'quarterfinals',
+	'semifinals',
+	'finals',
+	'grand finals'
+]
