@@ -455,5 +455,18 @@
 		"Errors": {
 			"missingCode": "Désolé, mais la connexion n'a pas pu être terminée. En cas d'inattendu, veuillez réessayer sinon n'hésitez pas à revenir accueil."
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
 	}
 }
