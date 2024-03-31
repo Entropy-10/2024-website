@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import ChevronDownIcon from '~/components/icons/chevron-down'
 import MessageBox from '~/components/message-box'
+import Button from '~/components/ui/button'
 import * as Dropdown from '~/components/ui/dropdown'
 import type { Tables } from '~/types/supabase'
 import Mappool from './mappool'
@@ -27,6 +28,7 @@ export default function MappoolContainer({
 		defaultRound ?? 'qualifiers'
 	)
 	const [maps, setMaps] = useState<Tables<'maps'>[]>([])
+	const [mappack, setMappack] = useState<string | null>(null)
 	const [error, setError] = useState<ModalError | null>(null)
 
 	useEffect(() => {
@@ -40,6 +42,7 @@ export default function MappoolContainer({
 
 			if (!mappool) {
 				setMaps([])
+				setMappack(null)
 				setError({
 					title: t('Errors.FailedMappool.title'),
 					message: t('Errors.FailedMappool.message')
@@ -49,6 +52,7 @@ export default function MappoolContainer({
 
 			if (!mappool.released) {
 				setMaps([])
+				setMappack(null)
 				setError({
 					title: t('Errors.NotReleased.title'),
 					message: t('Errors.NotReleased.message')
@@ -57,6 +61,7 @@ export default function MappoolContainer({
 			}
 
 			setMaps(mappool.maps)
+			setMappack(mappool.mappack)
 			setError(null)
 			setLoading(false)
 		}
@@ -65,6 +70,13 @@ export default function MappoolContainer({
 
 	return (
 		<div>
+			<div className='absolute top-[100px] right-0 md:top-[114px]'>
+				{/* @ts-expect-error eeee will fix later */}
+				<Button target='_blank' href={mappack ?? '/mappool'}>
+					DOWNLOAD MAPPACK
+				</Button>
+			</div>
+
 			<Dropdown.Root>
 				<Dropdown.Trigger className='group absolute top-12 right-0 flex h-[45px] w-[200px] items-center gap-3 bg-milky-white px-4 md:h-[61px] lg:w-[400px] md:w-[300px] focus:outline-none'>
 					<div className='text-left font-extrabold text-light-blue text-md lg:text-xl md:text-lg'>
@@ -75,17 +87,15 @@ export default function MappoolContainer({
 
 				<Dropdown.Content
 					align='start'
-					className='w-[160px] drop-shadow-none md:w-[180px]'
-				>
-					{rounds.map(round => (
+					className='w-[160px] drop-shadow-none md:w-[180px]'>
+					{rounds.map((round) => (
 						<Dropdown.Item
 							onClick={() => setSelectedRound(round)}
 							key={round}
 							className={cn(
 								selectedRound === round &&
 									'bg-light-blue font-bold text-milky-white'
-							)}
-						>
+							)}>
 							{round.toUpperCase()}
 						</Dropdown.Item>
 					))}
