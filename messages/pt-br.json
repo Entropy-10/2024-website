@@ -468,5 +468,8 @@
 				"message": "Sorry, but the mappool has not been released yet. Please check back later."
 			}
 		}
+	},
+	"SchedulePage": {
+		"heading": "SCHEDULE."
 	}
 }
