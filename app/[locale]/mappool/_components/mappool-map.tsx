@@ -3,11 +3,11 @@
 import { cn } from '@utils/client'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Music, Star, Timer } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { buildUrl } from 'osu-web.js'
 import { useState } from 'react'
 import type { Tables } from '~/types/supabase'
+import FallbackImage from './fallback-image'
 
 interface MappoolMapProps {
 	map: Tables<'maps'>
@@ -45,10 +45,11 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 				{map.beatmap_id}
 			</div>
 
-			<Image
+			<FallbackImage
 				height={112}
 				width={400}
 				src={buildUrl.beatmapsetCover(map.beatmapset_id)}
+				fallbackSrc='https://osu.ppy.sh/assets/images/default-bg@2x.4043b8f4.png'
 				alt='map bg'
 				className='h-[112px] w-[400px] select-none'
 			/>

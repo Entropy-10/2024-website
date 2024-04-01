@@ -87,15 +87,17 @@ export default function MappoolContainer({
 
 				<Dropdown.Content
 					align='start'
-					className='w-[160px] drop-shadow-none md:w-[180px]'>
-					{rounds.map((round) => (
+					className='w-[160px] drop-shadow-none md:w-[180px]'
+				>
+					{rounds.map(round => (
 						<Dropdown.Item
 							onClick={() => setSelectedRound(round)}
 							key={round}
 							className={cn(
 								selectedRound === round &&
 									'bg-light-blue font-bold text-milky-white'
-							)}>
+							)}
+						>
 							{round.toUpperCase()}
 						</Dropdown.Item>
 					))}
