@@ -102,6 +102,30 @@ export type Database = {
 					}
 				]
 			}
+			lobbies: {
+				Row: {
+					created_at: string
+					date: string
+					id: number
+					referee: string
+					time: string
+				}
+				Insert: {
+					created_at?: string
+					date: string
+					id?: number
+					referee: string
+					time: string
+				}
+				Update: {
+					created_at?: string
+					date?: string
+					id?: number
+					referee?: string
+					time?: string
+				}
+				Relationships: []
+			}
 			'looking-for-team-panel': {
 				Row: {
 					created_at: string
@@ -273,6 +297,7 @@ export type Database = {
 					flag: string
 					id: number
 					name: string
+					qual_lobby_id: number | null
 					timezone: string
 					updated_at: string
 				}
@@ -282,6 +307,7 @@ export type Database = {
 					flag: string
 					id?: number
 					name: string
+					qual_lobby_id?: number | null
 					timezone: string
 					updated_at: string
 				}
@@ -291,10 +317,19 @@ export type Database = {
 					flag?: string
 					id?: number
 					name?: string
+					qual_lobby_id?: number | null
 					timezone?: string
 					updated_at?: string
 				}
-				Relationships: []
+				Relationships: [
+					{
+						foreignKeyName: 'public_teams_qual_lobby_id_fkey'
+						columns: ['qual_lobby_id']
+						isOneToOne: false
+						referencedRelation: 'lobbies'
+						referencedColumns: ['id']
+					}
+				]
 			}
 			tokens: {
 				Row: {

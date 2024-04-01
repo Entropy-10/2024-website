@@ -36,7 +36,7 @@
 		"edge-csrf": "^1.0.9",
 		"embla-carousel-react": "^8.0.0",
 		"framer-motion": "^11.0.8",
-		"google-auth-library": "^9.5.0",
+		"google-auth-library": "9.7.0",
 		"google-spreadsheet": "^4.1.1",
 		"jose": "^5.2.3",
 		"lodash": "^4.17.21",
