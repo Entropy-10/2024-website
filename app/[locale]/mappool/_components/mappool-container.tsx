@@ -70,15 +70,19 @@ export default function MappoolContainer({
 
 	return (
 		<div>
-			<div className='absolute top-[100px] right-0 md:top-[114px]'>
-				{/* @ts-expect-error eeee will fix later */}
-				<Button target='_blank' href={mappack ?? '/mappool'}>
+			<div className='absolute top-[84px] right-0 md:top-[100px]'>
+				<Button
+					disabled={!mappack}
+					// @ts-expect-error eeee will fix later
+					target='_blank'
+					href={mappack ?? '/mappack'}
+				>
 					DOWNLOAD MAPPACK
 				</Button>
 			</div>
 
 			<Dropdown.Root>
-				<Dropdown.Trigger className='group absolute top-12 right-0 flex h-[45px] w-[200px] items-center gap-3 bg-milky-white px-4 md:h-[61px] lg:w-[400px] md:w-[300px] focus:outline-none'>
+				<Dropdown.Trigger className='group absolute top-8 right-0 flex h-[45px] w-[200px] items-center gap-3 bg-milky-white px-4 md:h-[61px] lg:w-[400px] md:w-[300px] focus:outline-none'>
 					<div className='text-left font-extrabold text-light-blue text-md lg:text-xl md:text-lg'>
 						{selectedRound.toUpperCase()}
 					</div>
