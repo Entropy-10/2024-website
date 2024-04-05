@@ -107,6 +107,7 @@ export type Database = {
 					created_at: string
 					date: string
 					id: number
+					lobby_id: string | null
 					referee: string
 					time: string
 				}
@@ -114,6 +115,7 @@ export type Database = {
 					created_at?: string
 					date: string
 					id?: number
+					lobby_id?: string | null
 					referee: string
 					time: string
 				}
@@ -121,6 +123,7 @@ export type Database = {
 					created_at?: string
 					date?: string
 					id?: number
+					lobby_id?: string | null
 					referee?: string
 					time?: string
 				}

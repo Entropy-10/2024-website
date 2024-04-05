@@ -13,11 +13,15 @@ export default function Lobby({ lobby }: LobbyProps) {
 			className={cn(
 				'w-[300px] p-3 text-light-blue shadow-[0px_4px_15px_0px_rgba(94,114,235,0.45)]',
 				lobby.id > 12 &&
-					'text-[#FF9190] shadow-[0px_4px_15px_0px_rgba(255,145,144,0.45)]'
+					'text-[#FF9190] shadow-[0px_4px_15px_0px_rgba(255,145,144,0.45)]',
+				lobby.lobby_id?.startsWith('EX') &&
+					'text-lavender shadow-[0px_4px_15px_0px_rgba(128,126,225,0.45)]'
 			)}
 		>
 			<div className='flex items-center gap-3'>
-				<div className='font-extrabold text-5xl'>{lobby.id}</div>
+				<div className='font-extrabold text-5xl'>
+					{lobby.lobby_id ?? lobby.id}
+				</div>
 
 				<div>
 					<div className='font-extrabold font-sm'>
@@ -47,7 +51,8 @@ export default function Lobby({ lobby }: LobbyProps) {
 						key={index}
 						className={cn(
 							'h-[30px] w-[65px] bg-light-blue/45',
-							lobby.id > 12 && 'bg-[#FF9190]/45'
+							lobby.id > 12 && 'bg-[#FF9190]/45',
+							lobby.lobby_id?.startsWith('EX') && 'bg-lavender/45'
 						)}
 					/>
 				))}
