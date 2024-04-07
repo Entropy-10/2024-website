@@ -61,6 +61,20 @@ export default function Mappool({ maps }: MappoolProps) {
 						<MappoolMap key={map.beatmap_id} map={map} />
 					))}
 			</ModPoolContainer>
+
+			{sortedMaps.some(map => map.mod === 'TB') && (
+				<>
+					<Divider />
+
+					<ModPoolContainer>
+						{sortedMaps
+							.filter(map => map.mod === 'TB')
+							.map(map => (
+								<MappoolMap key={map.beatmap_id} map={map} />
+							))}
+					</ModPoolContainer>
+				</>
+			)}
 		</>
 	)
 }

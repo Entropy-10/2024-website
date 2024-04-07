@@ -33,7 +33,17 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 		BR = 'Barrel Roll',
 		RP = 'Repel',
 		BU = 'Bubbles',
-		DP = 'Depth'
+		DP = 'Depth',
+		AD = 'Approach Different',
+		DF = 'Deflate',
+		SY = 'Synesthesia',
+		SI = 'Spin In',
+		NS = 'No Scope',
+		MG = 'Magnetized',
+		FR = 'Freeze Frame',
+		AS = 'Adaptive Speed',
+		WU = 'Wind Up',
+		WD = 'Wind Down'
 	}
 
 	return (

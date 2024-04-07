@@ -483,7 +483,25 @@ export type Database = {
 			invite_status: 'pending' | 'accepted' | 'denied'
 			mod: 'NM' | 'HD' | 'HR' | 'DT' | 'LM' | 'TB'
 			player_role: 'captain' | 'player'
-			sub_mod: 'BR' | 'TC'
+			sub_mod:
+				| 'BR'
+				| 'TC'
+				| 'DF'
+				| 'GR'
+				| 'SI'
+				| 'WG'
+				| 'TR'
+				| 'WU'
+				| 'WD'
+				| 'AD'
+				| 'NS'
+				| 'MG'
+				| 'RP'
+				| 'AS'
+				| 'FR'
+				| 'BU'
+				| 'SY'
+				| 'DP'
 		}
 		CompositeTypes: {
 			[_ in never]: never
