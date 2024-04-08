@@ -1,13 +1,14 @@
 import Image from 'next/image'
 
 interface Props {
-	song?: 'album' | 'fermion'
+	song?: 'album' | 'fermion' | 'twilight'
 	temp?: boolean
 }
 
 const songs = {
 	fermion: '/images/fermion-cover.png',
-	album: '/images/album-cover.png'
+	album: '/images/album-cover.png',
+	twilight: '/images/twilight-cover.jpeg'
 }
 
 export default function Song({ song, temp }: Props) {
@@ -20,6 +21,8 @@ export default function Song({ song, temp }: Props) {
 				className='size-auto select-none'
 				src={songs[song]}
 				alt={`${song} cover`}
+				quality={100}
+				placeholder='blur'
 			/>
 		</div>
 	) : (
