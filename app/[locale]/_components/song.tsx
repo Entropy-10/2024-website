@@ -22,7 +22,6 @@ export default function Song({ song, temp }: Props) {
 				src={songs[song]}
 				alt={`${song} cover`}
 				quality={100}
-				placeholder='blur'
 			/>
 		</div>
 	) : (

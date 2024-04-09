@@ -1,5 +1,4 @@
 import { createMetadata } from '@metadata'
-import { get } from '@vercel/edge-config'
 import { getMessages, getTranslations } from 'next-intl/server'
 
 import type { MetadataProps } from '@types'
@@ -22,7 +21,8 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 export default async function MappoolPage() {
 	const t = await getTranslations('MappoolPage')
 	const messages = await getMessages()
-	const defaultRound = (await get('defaultRound'))?.toString()
+	// TODO: fix this
+	const defaultRound = 'round of 32'
 
 	return (
 		<div className='relative'>
