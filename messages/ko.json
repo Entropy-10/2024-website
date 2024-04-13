@@ -404,7 +404,7 @@
 				"2": "워밍업, 보호, 금지, 그리고 선택은 **2분** 안에 제출되어야 합니다.",
 				"3": "팀은 **경기 시작 후 5분 이내에** 로비 안에 3명의 플레이어가 있어야 합니다. 각 시간에 다음을 포기해야 합니다. {sublist_alpha} 5분 지각은 보호를 포기합니다. {sublist_alpha} 10분 지각은 금지를 포기합니다. {sublist_alpha} 15분 지각은 경기를 포기합니다.",
 				"4": "플레이어들은 팀에 해당하는 로비 슬롯에 있어야 합니다. {sublist_alpha} 팀 1 (빨강): 슬롯 1, 2, 그리고 3. {sublist_alpha} 팀 2 (파랑): 슬롯 4, 5, 그리고 6.",
-				"5": "대장들은 **경기의 Discord 스레드에서 /roll 명령어를 사용하여** **픽/밴 순서**를 결정합니다. 더 높은 숫자를 던진 대장은 다음 중 하나를 선택할 수 있습니다. 반면에, 다른 대장은 나머지를 받게 됩니다: {sublist_alpha} 먼저 픽하고 두 번째로 밴 {sublist_alpha} 두 번째로 픽하고 먼저로 밴",
+				"5": "Captains will use the **!roll command in the osu chat** to decide **Pick/Ban order**. The captain with the higher roll may select one of the following, while the other captain will receive the other: {sublist_alpha} First to Pick and Second to Ban {sublist_alpha} Second to Pick and First to Ban",
 				"6": "팀은 경기 전 1개의 맵을 선택하여 워마프로 플레이할 수 있습니다. {sublist_alpha} 워마프는 **4분 미만** 이어야 합니다. {sublist_alpha} 워마프는 **맵풀의 일부가 아니어야** 합니다.",
 				"7": "프로텍트는 밴 단계 전에 심사위원에게 **비공개로 제출될 것입니다**.",
 				"8": "금지된 맵은 **뱀 형태로** (ABBA) 진행됩니다. {sublist_alpha} 팀 1이 금지함, {sublist_alpha} 팀 2가 두 번 금지함, {sublist_alpha} 팀 1이 다시 금지함.",
