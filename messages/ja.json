@@ -404,7 +404,7 @@
 				"2": "ウォームアップ、プロテクト、バン、ピック は全て **2分以内** に選択しなければいけません。",
 				"3": "各チームは、試合開始時刻の **5分後**までに3人のプレイヤーを入室させなければいけません。遅刻すると、以下のペナルティが適用されます。 {sublist_alpha} 5分遅刻：プロテクト権利没収 {sublist_alpha} 10分遅刻：バン権利没収 {sublist_alpha} 15分遅刻：不戦敗扱い",
 				"4": "プレイヤーは、それぞれのチームに対応するスロットにいる必要があります。 {sublist_alpha} チーム1(赤)：スロット１、２、３ {sublist_alpha} チーム2(青)：スロット４、５、６",
-				"5": "各キャプテンは**ピック、バンの順番**を決めるために、Discordの**試合用スレッドで/rollコマンド** を使用します。rollで高い値を出したキャプテンは、以下のいずれかを選択することができます。もう一方のキャプテンは、選ばれなかった方になります。 {sublist_alpha} ピック：先攻、バン：後攻 {sublist_alpha} ピック：後攻、バン：先攻",
+				"5": "Captains will use the **!roll command in the osu chat** to decide **Pick/Ban order**. The captain with the higher roll may select one of the following, while the other captain will receive the other: {sublist_alpha} First to Pick and Second to Ban {sublist_alpha} Second to Pick and First to Ban",
 				"6": "各チームは、試合前にウォームアップの譜面を1つ選択することができます。{sublist_alpha} ウォームアップは **4分未満** でなければなりません。{sublist_alpha} ウォームアップに、**マッププールの譜面** は使用できません。",
 				"7": "プロテクト (保護) は、バンを行うフェーズの前に、**非公開**で提出されます。",
 				"8": "バンフェーズは、**スネーク形式** (ABBA) で行われます。 {sublist_alpha} チーム1 バン {sublist_alpha} チーム2 バン(2回) {sublist_alpha} チーム1 バン",
