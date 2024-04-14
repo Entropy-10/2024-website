@@ -418,7 +418,7 @@
 			}
 		},
 		"MappoolInfo": {
-			"1": "图池将会在每**周日**公布。",
+			"1": "The mappool will be released the **Sunday or Monday** of every week.",
 			"2": "Lazer Mod，简称LM，是一个从Lazer客户端提供的新模组中，每周选用不同模组组成的模组池。",
 			"heading": "图池信息",
 			"Table": {
