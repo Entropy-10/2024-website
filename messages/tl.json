@@ -418,7 +418,7 @@
 			}
 		},
 		"MappoolInfo": {
-			"1": "Ipapalabas ang mappool tuwing **Linggo** ng bawat linggo.",
+			"1": "The mappool will be released the **Sunday or Monday** of every week.",
 			"2": "Ang Lazer Mod, o LM para sa maikli, ay isang modpool na magtatampok ng iba't ibang mod bawat linggo upang ipakita ang mga bagong mod na inaalok ng Lazer client.",
 			"heading": "IMPORMASYON NG MAPPOOL.",
 			"Table": {
