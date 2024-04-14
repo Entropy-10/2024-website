@@ -418,7 +418,7 @@
 			}
 		},
 		"MappoolInfo": {
-			"1": "맵풀은 매주 **일요일**에 공개됩니다.",
+			"1": "The mappool will be released the **Sunday or Monday** of every week.",
 			"2": "Lazer Mod(약칭 LM), 는 Lazer 클라이언트에서 제공하는 새로운 모드들 중에서 매주 다른 모드들을 조합하여 구성된 모드 풀입니다.",
 			"heading": "맵풀 정보.",
 			"Table": {
