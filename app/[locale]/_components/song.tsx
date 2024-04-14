@@ -1,14 +1,17 @@
 import Image from 'next/image'
 
 interface Props {
-	song?: 'album' | 'fermion' | 'twilight'
+	song?: 'album' | 'fermion' | 'twilight' | 'cyber' | 'phoenix' | 'fractal'
 	temp?: boolean
 }
 
 const songs = {
-	fermion: '/images/fermion-cover.png',
+	fermion: '/images/fermion-cover.jpeg',
 	album: '/images/album-cover.png',
-	twilight: '/images/twilight-cover.jpeg'
+	twilight: '/images/twilight-cover.jpeg',
+	cyber: '/images/cyber-cover.jpeg',
+	phoenix: '/images/phoenix-cover.jpeg',
+	fractal: '/images/fractal-cover.jpeg'
 }
 
 export default function Song({ song, temp }: Props) {
