@@ -418,7 +418,7 @@
 			}
 		},
 		"MappoolInfo": {
-			"1": "The mappool will be released the **Sunday** of every week.",
+			"1": "The mappool will be released the **Sunday or Monday** of every week.",
 			"2": "Lazer Mod, or LM for short, is a modpool that will feature different mods every week to showcase the new mods the Lazer client has to offer.",
 			"heading": "INFORMACJE MAPPOOL.",
 			"Table": {
