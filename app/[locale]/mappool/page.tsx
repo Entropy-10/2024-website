@@ -22,7 +22,7 @@ export default async function MappoolPage() {
 	const t = await getTranslations('MappoolPage')
 	const messages = await getMessages()
 	// TODO: fix this
-	const defaultRound = 'round of 32'
+	const defaultRound = 'round of 16'
 
 	return (
 		<div className='relative'>
