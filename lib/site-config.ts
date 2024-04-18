@@ -35,7 +35,8 @@ export const links = {
 	sheet: sheetLink,
 	forumPost: 'https://osu.ppy.sh/community/forums/topics/1889282?n=1',
 	challonge: 'https://challonge.com/test_open_2024',
-	album: 'https://www.youtube.com/@TEST_Open',
+	album:
+		'https://www.youtube.com/playlist?list=PLmOGTyAkZ1vMNjmCmK8DivdPdwAbuKWAp',
 	socials: {
 		twitch: 'https://www.twitch.tv/test_open',
 		youtube: 'https://www.youtube.com/@TEST_Open',
@@ -78,33 +79,33 @@ export const features: Feature[] = [
 export const songs = [
 	{
 		id: 0,
-		link: 'https://www.youtube.com/@TEST_Open',
-		name: 'Fermion Amplification',
-		artist: 'Kou!'
-	},
-	{
-		id: 1,
-		link: 'https://www.youtube.com/@TEST_Open',
-		name: 'RE_generate:fractal',
-		artist: 'Kou!'
-	},
-	{
-		id: 2,
-		link: 'https://www.youtube.com/@TEST_Open',
+		link: 'https://youtu.be/8aXTqEKd1Eg',
 		name: 'Twilight of the Abyss',
 		artist: 'Kanemiko'
 	},
 	{
-		id: 3,
-		link: 'https://www.youtube.com/@TEST_Open',
+		id: 1,
+		link: null,
 		name: 'Phoenix',
 		artist: 'Aethral'
 	},
 	{
-		id: 4,
-		link: 'https://www.youtube.com/@TEST_Open',
+		id: 2,
+		link: null,
 		name: 'Cyber Surge',
 		artist: 'Aethral'
+	},
+	{
+		id: 3,
+		link: null,
+		name: 'RE_generate:fractal',
+		artist: 'Kou!'
+	},
+	{
+		id: 4,
+		link: null,
+		name: 'Fermion Amplification',
+		artist: 'Kou!'
 	}
 ]
 

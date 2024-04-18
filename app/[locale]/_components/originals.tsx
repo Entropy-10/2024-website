@@ -38,13 +38,20 @@ export default function Originals() {
 					<ol className='mt-4 ml-10 list-inside list-[decimal-leading-zero] space-y-3 border-light-blue border-l-2 py-1 pl-4 font-medium text-blue text-sm marker:font-bold'>
 						{songs.map(({ name, artist, link, id }) => (
 							<li key={id}>
-								<Link
-									href={link}
-									target='_blank'
-									className='hover:underline focus:outline-none'
-								>
-									{name} by {artist}
-								</Link>
+								{link && (
+									<Link
+										href={link}
+										target='_blank'
+										className='hover:underline focus:outline-none'
+									>
+										{name} by {artist}
+									</Link>
+								)}
+								{!link && (
+									<span className='opacity-65'>
+										{name} by {artist}
+									</span>
+								)}
 							</li>
 						))}
 					</ol>
