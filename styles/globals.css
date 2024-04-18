@@ -3,15 +3,27 @@
 @tailwind utilities;
 
 @layer utilities {
-  .padding {
-    @apply px-4 md:px-12 lg:px-24;
-  }
+	.padding {
+		@apply px-4 md:px-12 lg:px-24;
+	}
 }
 
 * {
-  outline: 2px solid transparent;
-  outline-offset: 0px;
+	outline: 2px solid transparent;
+	outline-offset: 0px;
 }
 *:focus {
-  outline-color: #5e72eb;
+	outline-color: #5e72eb;
+}
+
+@media (max-width: 768px) {
+	.no-bottom-shadow {
+		clip-path: inset(-15px -15px 0px -15px);
+	}
+}
+
+@media (max-width: 768px) {
+	.no-top-shadow {
+		clip-path: inset(0px -15px -15px -15px);
+	}
 }

@@ -257,54 +257,57 @@ export type Database = {
 					date: string
 					id: number
 					match_id: number
-					referee_id: string
+					referee: string
 					round: string
-					team1: string
+					team1_id: number
 					team1_score: number
-					team2: string
+					team2_id: number
 					team2_score: number
 					time: string
+					type: Database['public']['Enums']['match_type']
 				}
 				Insert: {
 					created_at?: string
 					date: string
 					id?: number
 					match_id: number
-					referee_id: string
+					referee: string
 					round: string
-					team1: string
+					team1_id: number
 					team1_score: number
-					team2: string
+					team2_id: number
 					team2_score: number
 					time: string
+					type: Database['public']['Enums']['match_type']
 				}
 				Update: {
 					created_at?: string
 					date?: string
 					id?: number
 					match_id?: number
-					referee_id?: string
+					referee?: string
 					round?: string
-					team1?: string
+					team1_id?: number
 					team1_score?: number
-					team2?: string
+					team2_id?: number
 					team2_score?: number
 					time?: string
+					type?: Database['public']['Enums']['match_type']
 				}
 				Relationships: [
 					{
-						foreignKeyName: 'public_matches_team1_fkey'
-						columns: ['team1']
+						foreignKeyName: 'public_matches_team1_id_fkey'
+						columns: ['team1_id']
 						isOneToOne: false
 						referencedRelation: 'teams'
-						referencedColumns: ['name']
+						referencedColumns: ['id']
 					},
 					{
-						foreignKeyName: 'public_matches_team2_fkey'
-						columns: ['team2']
+						foreignKeyName: 'public_matches_team2_id_fkey'
+						columns: ['team2_id']
 						isOneToOne: false
 						referencedRelation: 'teams'
-						referencedColumns: ['name']
+						referencedColumns: ['id']
 					}
 				]
 			}
@@ -538,6 +541,7 @@ export type Database = {
 		}
 		Enums: {
 			invite_status: 'pending' | 'accepted' | 'denied'
+			match_type: 'loser' | 'loser2' | 'winner'
 			mod: 'NM' | 'HD' | 'HR' | 'DT' | 'LM' | 'TB'
 			player_role: 'captain' | 'player'
 			sub_mod:
