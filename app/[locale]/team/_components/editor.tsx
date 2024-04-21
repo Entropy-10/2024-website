@@ -28,6 +28,8 @@ interface EditorProps {
 		name: string
 		timezone: string
 		updated_at: string
+		available_starting: string | null
+		available_ending: string | null
 	}
 }
 
@@ -240,7 +242,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 						<div className='text-xs md:text-sm'>{team.acronym}</div>
 					)}
 					<div className={cn(editing && 'flex items-center gap-1')}>
-						<span className='text-xs md:text-sm'>{t('timezone')}:</span>{' '}
+						<span className='text-xs md:text-sm'>AVAILABILITY:</span>{' '}
 						{editing ? (
 							<UtcPicker
 								defaultValue={team.timezone}
@@ -252,7 +254,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 							/>
 						) : (
 							<span className='text-nowrap text-xs md:text-sm'>
-								{team.timezone}
+								{team.available_starting} - {team.available_ending}
 							</span>
 						)}
 					</div>

@@ -356,6 +356,8 @@ export type Database = {
 			teams: {
 				Row: {
 					acronym: string
+					available_ending: string | null
+					available_starting: string | null
 					created_at: string
 					flag: string
 					id: number
@@ -366,6 +368,8 @@ export type Database = {
 				}
 				Insert: {
 					acronym: string
+					available_ending?: string | null
+					available_starting?: string | null
 					created_at?: string
 					flag: string
 					id?: number
@@ -376,6 +380,8 @@ export type Database = {
 				}
 				Update: {
 					acronym?: string
+					available_ending?: string | null
+					available_starting?: string | null
 					created_at?: string
 					flag?: string
 					id?: number

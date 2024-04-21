@@ -53,3 +53,8 @@ export const updateTeamAction = z.object({
 		oldPath: z.string().min(1)
 	})
 })
+
+export const availabilityForm = z.object({
+	startingTime: z.string().toUpperCase().min(1, 'Starting time is required'),
+	endingTime: z.string().toUpperCase().min(1, 'Ending time is required')
+})

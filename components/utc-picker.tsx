@@ -8,6 +8,7 @@ import { cn } from '@utils/client'
 import type { UseFormRegisterReturn } from 'react-hook-form'
 
 interface UtcPickerProps extends UseFormRegisterReturn {
+	values?: string[]
 	defaultValue?: string
 	className?: {
 		trigger?: string
@@ -17,7 +18,7 @@ interface UtcPickerProps extends UseFormRegisterReturn {
 
 const UtcPicker = forwardRef<HTMLButtonElement, UtcPickerProps>(
 	(
-		{ name, onChange, required, disabled, className, defaultValue },
+		{ name, onChange, required, disabled, className, defaultValue, values },
 		forwardedRef
 	) => (
 		<Select.Root
@@ -57,7 +58,7 @@ const UtcPicker = forwardRef<HTMLButtonElement, UtcPickerProps>(
 						/>
 					</Select.ScrollUpButton>
 					<Select.Viewport>
-						{utcOptions.map(utcOption => (
+						{(values ?? utcOptions).map(utcOption => (
 							<Select.Item
 								key={utcOption}
 								value={utcOption}

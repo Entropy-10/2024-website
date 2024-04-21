@@ -139,6 +139,33 @@ export const utcOptions = [
 	'UTC+14'
 ]
 
+export const utcTimes = [
+	'0 UTC',
+	'1 UTC',
+	'2 UTC',
+	'3 UTC',
+	'4 UTC',
+	'5 UTC',
+	'6 UTC',
+	'7 UTC',
+	'8 UTC',
+	'9 UTC',
+	'10 UTC',
+	'11 UTC',
+	'12 UTC',
+	'13 UTC',
+	'14 UTC',
+	'15 UTC',
+	'16 UTC',
+	'17 UTC',
+	'18 UTC',
+	'19 UTC',
+	'20 UTC',
+	'21 UTC',
+	'22 UTC',
+	'23 UTC'
+]
+
 export const rounds = [
 	'qualifiers',
 	'round of 32',
