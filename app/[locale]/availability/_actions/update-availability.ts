@@ -19,7 +19,16 @@ export async function updateAvailability(formData: FormData) {
 		.eq('user_id', session.sub)
 		.maybeSingle()
 
-	if (!player || playerError) return { error: updateFailedError }
+	if (playerError) return { error: updateFailedError }
+
+	if (!player) {
+		return {
+			error: {
+				title: 'UNABLE TO UPDATE AVAILABILITY.',
+				message: 'You must be on a team to update your availability.'
+			}
+		}
+	}
 
 	if (player.role !== 'captain') {
 		return {
