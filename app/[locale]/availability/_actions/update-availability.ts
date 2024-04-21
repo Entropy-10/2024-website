@@ -15,11 +15,21 @@ export async function updateAvailability(formData: FormData) {
 
 	const { data: player, error: playerError } = await supabase
 		.from('players')
-		.select('team_id')
+		.select('team_id,role')
 		.eq('user_id', session.sub)
 		.maybeSingle()
 
 	if (!player || playerError) return { error: updateFailedError }
+
+	if (player.role !== 'captain') {
+		return {
+			error: {
+				title: 'UNABLE TO UPDATE AVAILABILITY.',
+				message:
+					"Only captains are allowed to update their team's availability."
+			}
+		}
+	}
 
 	const { error: teamError } = await supabase
 		.from('teams')
