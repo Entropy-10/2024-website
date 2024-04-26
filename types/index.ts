@@ -85,3 +85,8 @@ export interface ModalError {
 	title: string
 	message: string
 }
+
+export type Availability = {
+	saturday: { startingTime: string; endingTime: string }
+	sunday: { startingTime: string; endingTime: string }
+}

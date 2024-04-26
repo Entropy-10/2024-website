@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { acceptedImageTypes, createTeamForm } from '@schemas'
-import type { ModalError } from '@types'
+import type { Availability, ModalError } from '@types'
 import { cn, getFlagPathFromUrl } from '@utils/client'
 import { diff } from 'deep-object-diff'
 import { useTranslations } from 'next-intl'
@@ -14,6 +14,7 @@ import ImagePicker from '~/components/image-picker'
 import TextModal from '~/components/text-modal'
 import Button from '~/components/ui/button'
 import UtcPicker from '~/components/utc-picker'
+import type { Json } from '~/types/supabase'
 import updateTeam from '../_actions/update-team'
 import uploadImage from '../_actions/upload-image'
 
@@ -30,6 +31,7 @@ interface EditorProps {
 		updated_at: string
 		available_starting: string | null
 		available_ending: string | null
+		availability: Json
 	}
 }
 
@@ -42,6 +44,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 	const [modalMessage, setModalMessage] = useState<ModalError | null>(null)
 	const [open, setOpen] = useState(false)
 	const [csrfToken, setCsrfToken] = useState<string>('loading...')
+	const availability = team.availability as Availability | null
 
 	const {
 		register,
@@ -242,7 +245,6 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 						<div className='text-xs md:text-sm'>{team.acronym}</div>
 					)}
 					<div className={cn(editing && 'flex items-center gap-1')}>
-						<span className='text-xs md:text-sm'>AVAILABILITY:</span>{' '}
 						{editing ? (
 							<UtcPicker
 								defaultValue={team.timezone}
@@ -253,9 +255,16 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 								{...register('timezone')}
 							/>
 						) : (
-							<span className='text-nowrap text-xs md:text-sm'>
-								{team.available_starting} - {team.available_ending}
-							</span>
+							<>
+								{availability && (
+									<span className='text-nowrap text-xs md:text-sm'>
+										{availability.saturday.startingTime} -{' '}
+										{availability.saturday.endingTime} |{' '}
+										{availability.sunday.startingTime} -{' '}
+										{availability.sunday.endingTime}
+									</span>
+								)}
+							</>
 						)}
 					</div>
 

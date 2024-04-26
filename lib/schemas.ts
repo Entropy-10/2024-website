@@ -55,6 +55,17 @@ export const updateTeamAction = z.object({
 })
 
 export const availabilityForm = z.object({
-	startingTime: z.string().toUpperCase().min(1, 'Starting time is required'),
-	endingTime: z.string().toUpperCase().min(1, 'Ending time is required')
+	saturdayStartingTime: z
+		.string()
+		.toUpperCase()
+		.min(1, 'Starting time is required'),
+	saturdayEndingTime: z
+		.string()
+		.toUpperCase()
+		.min(1, 'Ending time is required'),
+	sundayStartingTime: z
+		.string()
+		.toUpperCase()
+		.min(1, 'Starting time is required'),
+	sundayEndingTime: z.string().toUpperCase().min(1, 'Ending time is required')
 })

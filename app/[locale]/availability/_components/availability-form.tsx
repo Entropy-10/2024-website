@@ -18,11 +18,6 @@ import { updateAvailability } from '../_actions/update-availability'
 import InputError from './input-error'
 import Label from './label'
 
-interface CreateTeamFormProps {
-	osuId: string
-	discordId: string
-}
-
 export default function AvailabilityForm() {
 	const [success, setSuccess] = useState(false)
 	const [error, setError] = useState<ModalError | null>(null)
@@ -41,8 +36,19 @@ export default function AvailabilityForm() {
 		const { csrfToken } = await csrfResp.json()
 
 		const availabilityForm = new FormData()
-		availabilityForm.append('startingTime', data.startingTime)
-		availabilityForm.append('endingTime', data.endingTime)
+		availabilityForm.append(
+			'availability',
+			JSON.stringify({
+				saturday: {
+					startingTime: data.saturdayStartingTime,
+					endingTime: data.saturdayEndingTime
+				},
+				sunday: {
+					startingTime: data.sundayStartingTime,
+					endingTime: data.sundayEndingTime
+				}
+			})
+		)
 		availabilityForm.append('csrf_token', csrfToken)
 
 		const { error } = await updateAvailability(availabilityForm)
@@ -61,34 +67,64 @@ export default function AvailabilityForm() {
 	return !success ? (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className='flex flex-col gap-3 bg-milky-white px-6 py-4'
+			className='flex flex-col gap-6 bg-milky-white px-6 py-4'
 		>
 			<Heading className='text-light-blue sm:text-md' padding={false} sub>
 				YOUR AVAILABILITY.
 			</Heading>
 
-			<div className='group'>
-				<Label htmlFor='timezone'>*Starting Time</Label>
-				<UtcPicker
-					{...register('startingTime')}
-					values={utcTimes}
-					className={{ trigger: 'w-full' }}
-				/>
-				{errors.startingTime?.message && (
-					<InputError message={errors.startingTime.message} />
-				)}
+			<div>
+				<h3 className='font-bold text-dark-blue'>Saturday</h3>
+				<div className='group mb-1'>
+					<Label htmlFor='timezone'>*Starting Time</Label>
+					<UtcPicker
+						{...register('saturdayStartingTime')}
+						values={utcTimes}
+						className={{ trigger: 'w-full' }}
+					/>
+					{errors.saturdayStartingTime?.message && (
+						<InputError message={errors.saturdayStartingTime.message} />
+					)}
+				</div>
+
+				<div className='group'>
+					<Label htmlFor='timezone'>*Ending Time</Label>
+					<UtcPicker
+						{...register('saturdayEndingTime')}
+						values={utcTimes}
+						className={{ trigger: 'w-full' }}
+					/>
+					{errors.saturdayEndingTime?.message && (
+						<InputError message={errors.saturdayEndingTime.message} />
+					)}
+				</div>
 			</div>
 
-			<div className='group'>
-				<Label htmlFor='timezone'>*Ending Time</Label>
-				<UtcPicker
-					{...register('endingTime')}
-					values={utcTimes}
-					className={{ trigger: 'w-full' }}
-				/>
-				{errors.endingTime?.message && (
-					<InputError message={errors.endingTime.message} />
-				)}
+			<div>
+				<h3 className='font-bold text-dark-blue'>Sunday</h3>
+				<div className='group mb-1'>
+					<Label htmlFor='timezone'>*Starting Time</Label>
+					<UtcPicker
+						{...register('sundayStartingTime')}
+						values={utcTimes}
+						className={{ trigger: 'w-full' }}
+					/>
+					{errors.sundayStartingTime?.message && (
+						<InputError message={errors.sundayStartingTime.message} />
+					)}
+				</div>
+
+				<div className='group'>
+					<Label htmlFor='timezone'>*Ending Time</Label>
+					<UtcPicker
+						{...register('sundayEndingTime')}
+						values={utcTimes}
+						className={{ trigger: 'w-full' }}
+					/>
+					{errors.sundayEndingTime?.message && (
+						<InputError message={errors.sundayEndingTime.message} />
+					)}
+				</div>
 			</div>
 
 			<Button

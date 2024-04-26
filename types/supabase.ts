@@ -255,6 +255,7 @@ export type Database = {
 				Row: {
 					created_at: string
 					date: string
+					forfeited_team: string | null
 					id: number
 					match_id: number
 					referee: string
@@ -269,6 +270,7 @@ export type Database = {
 				Insert: {
 					created_at?: string
 					date: string
+					forfeited_team?: string | null
 					id?: number
 					match_id: number
 					referee: string
@@ -283,6 +285,7 @@ export type Database = {
 				Update: {
 					created_at?: string
 					date?: string
+					forfeited_team?: string | null
 					id?: number
 					match_id?: number
 					referee?: string
@@ -356,6 +359,7 @@ export type Database = {
 			teams: {
 				Row: {
 					acronym: string
+					availability: Json | null
 					available_ending: string | null
 					available_starting: string | null
 					created_at: string
@@ -368,6 +372,7 @@ export type Database = {
 				}
 				Insert: {
 					acronym: string
+					availability?: Json | null
 					available_ending?: string | null
 					available_starting?: string | null
 					created_at?: string
@@ -380,6 +385,7 @@ export type Database = {
 				}
 				Update: {
 					acronym?: string
+					availability?: Json | null
 					available_ending?: string | null
 					available_starting?: string | null
 					created_at?: string

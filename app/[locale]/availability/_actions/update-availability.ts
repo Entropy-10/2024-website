@@ -2,6 +2,7 @@
 
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
+import type { Availability } from '@types'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -9,8 +10,9 @@ export async function updateAvailability(formData: FormData) {
 	const session = await getSession()
 	if (!session) redirect('/unauthorized')
 
-	const startingTime = formData.get('startingTime')?.toString()
-	const endingTime = formData.get('endingTime')?.toString()
+	const availability = JSON.parse(
+		String(formData.get('availability'))
+	) as Availability
 	const supabase = createClient(cookies())
 
 	const { data: player, error: playerError } = await supabase
@@ -42,7 +44,7 @@ export async function updateAvailability(formData: FormData) {
 
 	const { error: teamError } = await supabase
 		.from('teams')
-		.update({ available_starting: startingTime, available_ending: endingTime })
+		.update({ availability })
 		.eq('id', player.team_id)
 
 	if (teamError) return { error: updateFailedError }
