@@ -45,11 +45,11 @@ function SongsContainer() {
 			<div className='flex space-x-5'>
 				<Song song='fermion' />
 				<Song song='twilight' />
-				<Song temp />
+				<Song song='cyber' />
 			</div>
 
 			<div className='flex space-x-5 xl:justify-center'>
-				<Song temp />
+				<Song song='phoenix' />
 				<Song temp />
 			</div>
 		</div>
