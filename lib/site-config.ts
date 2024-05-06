@@ -85,13 +85,13 @@ export const songs = [
 	},
 	{
 		id: 1,
-		link: null,
+		link: 'https://youtu.be/3hu96E-cEDI',
 		name: 'Phoenix',
 		artist: 'Aethral'
 	},
 	{
 		id: 2,
-		link: null,
+		link: 'https://youtu.be/90CZ-Bpuw8o',
 		name: 'Cyber Surge',
 		artist: 'Aethral'
 	},
