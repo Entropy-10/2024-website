@@ -97,13 +97,13 @@ export const songs = [
 	},
 	{
 		id: 3,
-		link: null,
+		link: 'https://youtu.be/PeVR2XaXYXo',
 		name: 'RE_generate:fractal',
 		artist: 'Kou!'
 	},
 	{
 		id: 4,
-		link: null,
+		link: 'https://youtu.be/k_gnDiJ_7bo',
 		name: 'Fermion Amplification',
 		artist: 'Kou!'
 	}

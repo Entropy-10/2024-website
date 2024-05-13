@@ -22,7 +22,7 @@ export default async function MappoolPage() {
 	const t = await getTranslations('MappoolPage')
 	const messages = await getMessages()
 	// TODO: fix this
-	const defaultRound = 'finals'
+	const defaultRound = 'grand finals'
 
 	return (
 		<div className='relative'>

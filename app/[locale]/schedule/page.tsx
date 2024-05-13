@@ -30,7 +30,7 @@ export default async function SchedulePage() {
 			'*, team1_id(*, players(*,users(rank))), team2_id(*, players(*,users(rank)))'
 		)
 		.order('match_id')
-		.eq('round', 'finals')
+		.eq('round', 'grand finals')
 
 	type TeamWithPlayerAndUser = Tables<'teams'> & {
 		players: Tables<'players'> & { users: Pick<Tables<'users'>, 'rank'> }[]
