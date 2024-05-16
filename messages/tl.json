@@ -169,9 +169,9 @@
 			"message": "Sarado ang pag rehistro hanggang magsimula ang paligsahan. Maaring bumalik pag natapos na ang countdown sa unang pahina."
 		},
 		"Form": {
-			"heading": "GUMAWA NG PANGKAT.",
-			"teamName": "Pangalang ng Pangkat",
-			"teamAcronym": "Pangkatang Akronim",
+			"heading": "GUMAWA NG KOPONAN.",
+			"teamName": "Pangalang ng Koponan",
+			"teamAcronym": "Akronim ng Koponan",
 			"timezone": "Timezone",
 			"teamFlag": "Pangkatang Bandila",
 			"createButton": {
@@ -179,9 +179,9 @@
 				"loadingText": "GINAGAWA"
 			},
 			"Success": {
-				"title": "NAGAWA NA ANG PANGKAT!",
+				"title": "NAGAWA NA ANG KOPONAN!",
 				"message": "Maligayang pagdating sa TEST Open. Pindutin ang pindutan sa ibaba upang makita ang pahina ng pamamahala sa iyong koponan at magsimulang mag imbita ng mga manlalaro.\n",
-				"teamManagementButton": "PAMAMAHALA NG PANGKAT"
+				"teamManagementButton": "PAMAMAHALA NG KOPONAN"
 			},
 			"ImagePicker": {
 				"upload": "Dito pumindot upang mag-upload",
@@ -201,7 +201,7 @@
 				"message": "Mukhang mayroon nang koponan ang gumagamit niyan. Mangyaring gumamit ng iba.",
 				"Types": {
 					"name": "pangalan",
-					"acronym": "",
+					"acronym": "akronim",
 					"player": "manlalaro"
 				},
 				"title": "MAYROON NANG {type} NA KOPONAN!"
@@ -404,7 +404,7 @@
 				"2": "Dapat i-submit ang mga Warmups, Protects, Bans, at Picks sa loob ng **2 minuto**.",
 				"3": "Ang mga team ay inaasahang magkakaroon ng tatlong manlalaro sa silid sa loob ng **5 minuto pagkatapos ng oras ng pagsisimula ng kanilang room**. Mawawala ang mga sumusunod sa bawat timestamp. {sublist_alpha} 5 minutong huli ay mawawalan ang protects. {sublist_alpha} 10 minutong huli ay mawawalan ng bans. {sublist_alpha} Ang huling 15 minuto ay isang pag-forfeit ng laban.",
 				"4": "Ang mga manlalaro ay dapat nasa lobby slot na naaayon sa kanilang team. {sublist_alpha} Team 1 (Red): Slots 1, 2, at 3. {sublist_alpha} Team 2 (Blue): Slots 4, 5, at 6.",
-				"5": "Gagamitin ng mga kapitan ang **/roll command sa Discord thread** ng kanilang laban para mapagdesisyonan ang **Pick/Ban order**. Ang kapitan na may mas mataas na roll ay maaaring pumili ng isa sa mga sumusunod, habang ang isa pang kapitan ay tatanggap ng isa pa: {sublist_alpha} Unang Pinili at Pangalawa sa Pagbawal {sublist_alpha} Pangalawa sa Pinili at Unang Pagbawalan",
+				"5": "Captains will use the **!roll command in the osu chat** to decide **Pick/Ban order**. The captain with the higher roll may select one of the following, while the other captain will receive the other: {sublist_alpha} First to Pick and Second to Ban {sublist_alpha} Second to Pick and First to Ban",
 				"6": "Maaaring mag-opt in ang mga team sa paglalaro ng isang mapa na kanilang pinili bilang warmup bago ang laban. {sublist_alpha} Dapat ay **mas mababa sa 4 na minuto ang haba ng mga warmup**. {sublist_alpha} Maaaring **hindi bahagi ng mappool** ang mga warmup.",
 				"7": "Ang mga proteksiyon ay **pribadong isu-submit** sa referee bago ang banning phase.",
 				"8": "Ang banning phase ay gagawin sa isang **snake format** (ABBA). {sublist_alpha} Team 1 ay magba-ban {sublist_alpha} Team 2 ay magba-ban ng dawalang beses {sublist_alpha} at ang Team 1 ay muling magbaban",
@@ -418,7 +418,7 @@
 			}
 		},
 		"MappoolInfo": {
-			"1": "Ipapalabas ang mappool tuwing **Linggo** ng bawat linggo.",
+			"1": "The mappool will be released the **Sunday or Monday** of every week.",
 			"2": "Ang Lazer Mod, o LM para sa maikli, ay isang modpool na magtatampok ng iba't ibang mod bawat linggo upang ipakita ang mga bagong mod na inaalok ng Lazer client.",
 			"heading": "IMPORMASYON NG MAPPOOL.",
 			"Table": {
@@ -455,5 +455,24 @@
 		"Errors": {
 			"missingCode": "Paumanhin, pero ang pag-sign in ay hindi makumpleto. Pag hindi inasahan subukang muli kung hindi ay huwag mag-atubiling mag-navigate pabalik sa home."
 		}
+	},
+	"MappoolPage": {
+		"heading": "MAPPOOL.",
+		"Errors": {
+			"FailedMappool": {
+				"title": "FAILED TO GET MAPPOOL!",
+				"message": "Sorry, but we failed to get the mappool. Please try again and see if that helps."
+			},
+			"NotReleased": {
+				"title": "MAPPOOL NOT RELEASED!",
+				"message": "Sorry, but the mappool has not been released yet. Please check back later."
+			}
+		}
+	},
+	"SchedulePage": {
+		"heading": "SCHEDULE."
+	},
+	"AvailabilityPage": {
+		"heading": "AVAILABILITY."
 	}
 }
