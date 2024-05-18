@@ -39,7 +39,7 @@ function SongsContainer() {
 		<div className='flex space-x-5 xl:block xl:rotate-[-20deg] xl:space-x-0 xl:space-y-5'>
 			<div className='flex space-x-5 xl:justify-center'>
 				<Song song='album' />
-				<Song temp />
+				<Song song='fractal' />
 			</div>
 
 			<div className='flex space-x-5'>
