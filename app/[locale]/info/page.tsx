@@ -135,6 +135,7 @@ ${t('GeneralInfo.Schedule.9')}
 - ${t('GameProcedures.Qualifiers.1')}
 - ${t('GameProcedures.Qualifiers.2', { sublist_alpha: '\n1.' })}
 - ${t('GameProcedures.Qualifiers.3')}
+- ${t('GameProcedures.Qualifiers.4')}
 					`}
 					/>
 				</div>

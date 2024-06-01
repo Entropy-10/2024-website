@@ -397,6 +397,7 @@
 				"1": "Maps will be played in the same order as seen on the mappool.",
 				"2": "If a player **disconnects** **within the first minute of a map**, the player will replay the map at the **end of the qualifier room**.",
 				"3": "Teams are expected to have 3 players in the room within **5 minutes after their room start time**. If a team fails to show up then the team will have to reschedule their room. This room must be at least **4 hours** after the room they failed to show up to.",
+				"4": "Once qualifiers have concluded, teams will be seeded into the top 32 using z-sum as a calculation method.",
 				"heading": "QUALIFIERS"
 			},
 			"Match": {
