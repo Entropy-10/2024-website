@@ -3,7 +3,7 @@ import { vercel } from '@t3-oss/env-nextjs/presets'
 import { z } from 'zod'
 
 export const env = createEnv({
-	extends: [vercel],
+	extends: [vercel()],
 	client: {
 		NEXT_PUBLIC_START_DATE: z.string().min(1),
 		NEXT_PUBLIC_OSU_CLIENT_ID: z.coerce.number().min(1),
