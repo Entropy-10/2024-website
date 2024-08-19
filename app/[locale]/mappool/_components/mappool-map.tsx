@@ -63,7 +63,7 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 				alt='map bg'
 				className='h-[112px] w-[400px] select-none'
 			/>
-			<div className='absolute bottom-[74px] h-[112px] w-full bg-gradient-to-t from-15% from-milky-white to-65% to-transparent opacity-100 transition-all sm:group-hover:opacity-100 sm:opacity-0'>
+			<div className='absolute bottom-[74px] h-[112px] w-full bg-gradient-to-t from-15% from-milky-white to-65% to-transparent opacity-100 transition-all sm:opacity-0 sm:group-hover:opacity-100'>
 				<div className='relative h-full'>
 					<div className='absolute bottom-0 flex w-full justify-between px-3 font-extrabold text-sm'>
 						<div>MAPPER: {map.mapper}</div>
@@ -99,8 +99,8 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 								{map.dt_rate
 									? `${map.dt_rate}x`
 									: map.sub_mod
-									  ? map.sub_mod
-									  : ''}
+										? map.sub_mod
+										: ''}
 							</div>
 						)}
 					</button>

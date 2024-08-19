@@ -64,7 +64,7 @@ export default function Footer() {
 						{buttonsT('register')}
 					</Button>
 
-					<div className='mt-5 flex items-center space-x-5 max-md:mt-0 *:cursor-pointer md:justify-end *:outline-none'>
+					<div className='mt-5 flex items-center space-x-5 *:cursor-pointer *:outline-none max-md:mt-0 md:justify-end'>
 						<NextLink target='_blank' href={discord}>
 							<Discord className='hover:fill-[#5865F2]' />
 						</NextLink>
@@ -91,7 +91,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className='md:-mr-2 z-20 flex justify-center md:absolute lg:right-[96px] md:right-[48px] md:bottom-1 md:justify-end'>
+				<div className='md:-mr-2 z-20 flex justify-center md:absolute md:right-[48px] md:bottom-1 md:justify-end lg:right-[96px]'>
 					<Suspense>
 						<Status />
 					</Suspense>

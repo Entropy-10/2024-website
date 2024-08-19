@@ -21,7 +21,7 @@ const Content = forwardRef<
 			ref={ref}
 			{...props}
 			className={cn(
-				'fixed top-[50%] left-[50%] h-[195px] w-[90vw] max-w-[595px] translate-x-[-50%] translate-y-[-50%] bg-gradient-to-bl from-[-9%] from-lavender to-[109%] to-light-blue p-[25px] drop-shadow-lg data-[state=open]:animate-overlayShow focus:outline-none',
+				'fixed top-[50%] left-[50%] h-[195px] w-[90vw] max-w-[595px] translate-x-[-50%] translate-y-[-50%] bg-gradient-to-bl from-[-9%] from-lavender to-[109%] to-light-blue p-[25px] drop-shadow-lg focus:outline-none data-[state=open]:animate-overlayShow',
 				className
 			)}
 		/>

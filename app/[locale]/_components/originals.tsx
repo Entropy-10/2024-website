@@ -10,17 +10,17 @@ export default function Originals() {
 
 	return (
 		<section className='mt-10 flex flex-col items-center pb-10 text-light-blue xl:flex-row xl:justify-between xl:pb-0'>
-			<div className='flex flex-col px-4 md:mr-10 md:flex-row lg:justify-normal md:justify-between lg:space-x-12 md:pl-12 xl:pl-24'>
-				<article className='lg:min-w-[450px] md:min-w-[400px]'>
-					<h3 className='mb-2 text-center font-extrabold text-4xl md:text-left lg:text-6xl sm:text-5xl'>
+			<div className='flex flex-col px-4 md:mr-10 md:flex-row md:justify-between md:pl-12 lg:justify-normal lg:space-x-12 xl:pl-24'>
+				<article className='md:min-w-[400px] lg:min-w-[450px]'>
+					<h3 className='mb-2 text-center font-extrabold text-4xl sm:text-5xl md:text-left lg:text-6xl'>
 						TEST Originals
 					</h3>
-					<div className='text-center font-medium text-md md:text-left lg:text-xl sm:text-lg'>
+					<div className='text-center font-medium text-md sm:text-lg md:text-left lg:text-xl'>
 						{t('subtitle')}
 					</div>
 
 					<div className='mt-7 flex flex-col items-center border-light-blue md:ml-10 md:items-baseline md:border-l-2 md:py-1 md:pl-4'>
-						<p className='mb-3 w-[330px] text-center font-medium text-blue text-sm leading-6 md:text-left max-sm:text-xs'>
+						<p className='mb-3 w-[330px] text-center font-medium text-blue text-sm leading-6 max-sm:text-xs md:text-left'>
 							{t('description')}
 						</p>
 
@@ -31,7 +31,7 @@ export default function Originals() {
 				</article>
 
 				<article className='hidden min-w-[320px] md:block'>
-					<h3 className='mt-10 font-medium lg:text-2xl sm:text-xl'>
+					<h3 className='mt-10 font-medium sm:text-xl lg:text-2xl'>
 						{t('tracksTitle')}
 					</h3>
 

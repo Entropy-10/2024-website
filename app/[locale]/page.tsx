@@ -24,7 +24,7 @@ export default function Home() {
 				<div className='py-20'>
 					<section className='relative flex items-center justify-center xl:justify-between xl:px-24'>
 						<article className='sm:block'>
-							<div className='flex flex-col items-center text-8xl leading-none md:flex-row lg:space-x-11 md:space-x-7 lg:text-[8.75rem]'>
+							<div className='flex flex-col items-center text-8xl leading-none md:flex-row md:space-x-7 lg:space-x-11 lg:text-[8.75rem]'>
 								<span className='font-extrabold'>TEST</span>
 								<div className='flex items-center space-x-4 lg:space-x-6'>
 									<Image
@@ -49,7 +49,7 @@ export default function Home() {
 								<span className='hidden w-28 text-right xl:block'>
 									{t('Header.hostTitle')}
 								</span>
-								<div className='-top-[20px] absolute right-0 hidden h-[2px] w-96 bg-milky-white xl:top-[15px] md:block' />
+								<div className='-top-[20px] absolute right-0 hidden h-[2px] w-96 bg-milky-white md:block xl:top-[15px]' />
 							</div>
 
 							<div className='mt-9 hidden flex-col text-right font-light xl:flex'>

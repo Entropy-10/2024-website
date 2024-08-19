@@ -45,7 +45,7 @@ export default function Options() {
 						<Button
 							loading={deleting}
 							onClick={() => handleDelete()}
-							className='text-red-400 max-xs:w-full hover:bg-red-400 hover:text-milky-white'
+							className='text-red-400 hover:bg-red-400 hover:text-milky-white max-xs:w-full'
 						>
 							{deleting
 								? t('DeleteAccount.Buttons.Delete.loadingText')

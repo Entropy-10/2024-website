@@ -45,7 +45,7 @@ export default function InfoPage() {
 
 				<Heading sub>{t('GeneralInfo.Schedule.heading')}</Heading>
 				<div className='padding'>
-					<div className='px-7 lg:px-11 md:px-9'>
+					<div className='px-7 md:px-9 lg:px-11'>
 						<CustomMDX
 							source={`
 ${t('GeneralInfo.Schedule.1')}\n
@@ -129,7 +129,7 @@ ${t('GeneralInfo.Schedule.9')}
 				<Divider variant='single' />
 
 				<Heading sub>{t('GameProcedures.Qualifiers.heading')}</Heading>
-				<div className='px-7 lg:px-11 md:px-9'>
+				<div className='px-7 md:px-9 lg:px-11'>
 					<CustomMDX
 						source={`
 - ${t('GameProcedures.Qualifiers.1')}
@@ -143,7 +143,7 @@ ${t('GeneralInfo.Schedule.9')}
 				<Divider variant='single' />
 
 				<Heading sub>{t('GameProcedures.Match.heading')}</Heading>
-				<div className='px-7 lg:px-11 md:px-9'>
+				<div className='px-7 md:px-9 lg:px-11'>
 					<CustomMDX
 						source={`
 - ${t('GameProcedures.Match.1')}

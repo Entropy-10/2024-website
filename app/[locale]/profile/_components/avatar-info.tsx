@@ -46,7 +46,7 @@ export default function AvatarInfo({
 					}
 					className={cn(
 						'mb-4 size-24 border-2 border-milky-white md:size-[123px]',
-						type === 'discord' && 'hidden xs:flex'
+						type === 'discord' && 'xs:flex hidden'
 					)}
 				/>
 				<div
@@ -80,7 +80,7 @@ export default function AvatarInfo({
 			<div
 				className={cn(
 					'flex h-24 flex-col justify-between text-sm md:h-[123px]',
-					type === 'discord' && 'hidden xs:flex'
+					type === 'discord' && 'xs:flex hidden'
 				)}
 			>
 				<div className='font-extrabold text-lg uppercase md:mb-1 md:text-xl'>

@@ -82,11 +82,11 @@ export default function MappoolContainer({
 			</div>
 
 			<Dropdown.Root>
-				<Dropdown.Trigger className='group absolute top-8 right-0 flex h-[45px] w-[200px] items-center gap-3 bg-milky-white px-4 md:h-[61px] lg:w-[400px] md:w-[300px] focus:outline-none'>
-					<div className='text-left font-extrabold text-light-blue text-md lg:text-xl md:text-lg'>
+				<Dropdown.Trigger className='group absolute top-8 right-0 flex h-[45px] w-[200px] items-center gap-3 bg-milky-white px-4 focus:outline-none md:h-[61px] md:w-[300px] lg:w-[400px]'>
+					<div className='text-left font-extrabold text-light-blue text-md md:text-lg lg:text-xl'>
 						{selectedRound.toUpperCase()}
 					</div>
-					<ChevronDownIcon className='size-6 text-light-blue transition-all duration-300 md:size-8 group-data-[state=open]:rotate-180' />
+					<ChevronDownIcon className='size-6 text-light-blue transition-all duration-300 group-data-[state=open]:rotate-180 md:size-8' />
 				</Dropdown.Trigger>
 
 				<Dropdown.Content

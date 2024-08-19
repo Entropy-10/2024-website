@@ -28,7 +28,7 @@ export default async function MappoolPage() {
 		<div className='relative'>
 			<Background className='py-8'>
 				<Heading>{t('heading')}</Heading>
-				<HeaderDivider className='max-w-[180px] lg:max-w-[360px] md:max-w-[310px] sm:max-w-[280px]' />
+				<HeaderDivider className='max-w-[180px] sm:max-w-[280px] md:max-w-[310px] lg:max-w-[360px]' />
 			</Background>
 
 			<NextIntlClientProvider messages={pick(messages, 'MappoolPage')}>

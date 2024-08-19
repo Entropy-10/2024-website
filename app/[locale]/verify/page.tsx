@@ -31,10 +31,10 @@ export default async function VerifyPage({ searchParams }: VerifyPageProps) {
 					!session
 						? t('Messages.signIn')
 						: status === 'success'
-						  ? t('Messages.verified')
-						  : status === 'error'
-							  ? `${message ?? t('Messages.defaultError')}`
-							  : t('Messages.default')
+							? t('Messages.verified')
+							: status === 'error'
+								? `${message ?? t('Messages.defaultError')}`
+								: t('Messages.default')
 				}
 			>
 				{!session ? (

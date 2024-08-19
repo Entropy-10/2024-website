@@ -15,13 +15,13 @@ export const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'bg-milky-white text-blue disabled:pointer-events-none hover:bg-medium-blue hover:text-milky-white disabled:opacity-80',
+					'bg-milky-white text-blue hover:bg-medium-blue hover:text-milky-white disabled:pointer-events-none disabled:opacity-80',
 				invertedDefault:
-					'bg-medium-blue text-milky-white disabled:pointer-events-none hover:border-[2px] hover:border-medium-blue hover:bg-milky-white hover:text-medium-blue disabled:opacity-80',
+					'bg-medium-blue text-milky-white hover:border-[2px] hover:border-medium-blue hover:bg-milky-white hover:text-medium-blue disabled:pointer-events-none disabled:opacity-80',
 				outline:
-					'box-border border-[2px] border-milky-white text-milky-white disabled:pointer-events-none disabled:border-slate-300 hover:bg-milky-white disabled:text-slate-300 hover:text-medium-blue',
+					'box-border border-[2px] border-milky-white text-milky-white hover:bg-milky-white hover:text-medium-blue disabled:pointer-events-none disabled:border-slate-300 disabled:text-slate-300',
 				invertedOutline:
-					'box-border border-light-blue bg-light-blue text-milky-white disabled:pointer-events-none hover:border-[2px] hover:bg-transparent hover:text-light-blue disabled:opacity-80',
+					'box-border border-light-blue bg-light-blue text-milky-white hover:border-[2px] hover:bg-transparent hover:text-light-blue disabled:pointer-events-none disabled:opacity-80',
 				primary:
 					'text-milky-white disabled:pointer-events-none disabled:opacity-80'
 			},

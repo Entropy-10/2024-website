@@ -25,7 +25,7 @@ const components = {
 			{...props}
 			className='padding list-inside list-disc font-medium text-sm leading-6 sm:text-base sm:leading-8'
 		>
-			<div className='px-7 lg:px-11 md:px-9'>{props.children}</div>
+			<div className='px-7 md:px-9 lg:px-11'>{props.children}</div>
 		</ol>
 	)
 } satisfies React.ComponentProps<typeof MDXProvider>['components']

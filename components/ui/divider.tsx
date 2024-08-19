@@ -21,18 +21,18 @@ export default function Divider({
 						</div>
 					</div>
 				)
-		  })
+			})
 		: headerDivider({
 				header: children,
 				divider: (
-					<div className='col-start-1 py-3 lg:pr-20 md:pr-10'>
+					<div className='col-start-1 py-3 md:pr-10 lg:pr-20'>
 						<div className={cn('h-[2px] w-full bg-milky-white', className)} />
 						<div
 							className={cn('mt-2 ml-12 h-[5px] w-9 bg-milky-white', className)}
 						/>
 					</div>
 				)
-		  })
+			})
 }
 
 interface HeaderDividerProps {

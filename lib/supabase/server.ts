@@ -18,7 +18,7 @@ export const createClient = (
 				headers: token
 					? {
 							Authorization: `Bearer ${token}`
-					  }
+						}
 					: undefined
 			},
 			cookies: {

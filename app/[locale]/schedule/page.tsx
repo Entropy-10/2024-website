@@ -40,7 +40,7 @@ export default async function SchedulePage() {
 		<div className='relative'>
 			<Background className='py-8'>
 				<Heading>{t('heading')}</Heading>
-				<Divider className='max-w-[190px] lg:max-w-[370px] md:max-w-[320px] sm:max-w-[290px]' />
+				<Divider className='max-w-[190px] sm:max-w-[290px] md:max-w-[320px] lg:max-w-[370px]' />
 			</Background>
 
 			{/* <Qualifiers /> */}
