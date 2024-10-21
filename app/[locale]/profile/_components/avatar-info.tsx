@@ -8,12 +8,7 @@ import UpdateButton from './update-button'
 
 import pick from 'lodash/pick'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
-import {
-	type UnsafeUnwrappedCookies,
-	type UnsafeUnwrappedHeaders,
-	cookies,
-	headers
-} from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import type { Tables } from '~/types/supabase'
 import Options from './options'
 
@@ -24,21 +19,17 @@ interface AvatarInfoProps {
 	className?: string
 }
 
-export default function AvatarInfo({
+export default async function AvatarInfo({
 	user,
 	type,
 	children,
 	className
 }: AvatarInfoProps) {
-	const pathname =
-		(headers() as unknown as UnsafeUnwrappedHeaders).get('x-pathname') ??
-		'/profile'
-	const csrfToken =
-		(headers() as unknown as UnsafeUnwrappedHeaders).get('X-CSRF-Token') ??
-		'missing'
-	const locale =
-		(cookies() as unknown as UnsafeUnwrappedCookies).get('NEXT_LOCALE')
-			?.value ?? 'en'
+	const headerList = await headers()
+	const cookiesList = await cookies()
+	const pathname = headerList.get('x-pathname') ?? '/profile'
+	const csrfToken = headerList.get('X-CSRF-Token') ?? 'missing'
+	const locale = cookiesList.get('NEXT_LOCALE')?.value ?? 'en'
 	const t = useTranslations('ProfilePage.Buttons')
 	const messages = useMessages()
 
