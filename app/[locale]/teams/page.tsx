@@ -12,7 +12,11 @@ import TeamList from './_components/team-list'
 
 import type { MetadataProps } from '@types'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,
@@ -23,7 +27,7 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 
 export default async function TeamsPage() {
 	const t = await getTranslations('TeamsPage')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { count } = await supabase
 		.from('teams')
 		.select('*', { count: 'exact', head: true })

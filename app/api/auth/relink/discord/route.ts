@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 
 	if (!session) return NextResponse.redirect(`${getBaseUrl()}/unauthorized`)
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	try {
 		const tokens = await discordAuth.tokenRequest({
@@ -60,8 +60,8 @@ export async function GET(request: NextRequest) {
 
 		if (tokensError) throw tokensError
 
-		const returnUrl = cookies().get('return-url')?.value
-		if (returnUrl) cookies().delete('return-url')
+		const returnUrl = (await cookies()).get('return-url')?.value
+		if (returnUrl) (await cookies()).delete('return-url')
 
 		return NextResponse.redirect(returnUrl ?? `${url.origin}/profile`)
 	} catch (err) {

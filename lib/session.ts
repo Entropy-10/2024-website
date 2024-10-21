@@ -23,11 +23,11 @@ export async function decrypt<T>(input: string): Promise<T | any> {
 }
 
 export async function getSession() {
-	const session = cookies().get('session')?.value
+	const session = (await cookies()).get('session')?.value
 	if (!session) return null
 	return (await decrypt(session)) as Session
 }
 
 export async function deleteSession() {
-	cookies().set('session', '', { expires: new Date(0) })
+	;(await cookies()).set('session', '', { expires: new Date(0) })
 }

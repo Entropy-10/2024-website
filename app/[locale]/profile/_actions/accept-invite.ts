@@ -16,7 +16,7 @@ export async function acceptInvite(formData: FormData) {
 	const t = await getServerTranslations('ProfilePage.Errors')
 
 	try {
-		const supabase = createClient(cookies())
+		const supabase = createClient(await cookies())
 		const { error: teamError } = await supabase.from('players').insert({
 			team_id: Number.parseInt(teamId),
 			user_id: session.sub,

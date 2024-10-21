@@ -9,7 +9,11 @@ import HeaderDivider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
 import MappoolContainer from './_components/mappool-container'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,

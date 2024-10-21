@@ -13,7 +13,7 @@ export async function deleteTeam(formData: FormData) {
 	if (!teamId || !teamFlag || !userId) return
 
 	const t = await getServerTranslations('TeamPage.Errors')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { count, data } = await supabase
 		.from('players')

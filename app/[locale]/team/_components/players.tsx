@@ -23,7 +23,7 @@ export default async function Players({
 	isCaptain
 }: PlayersProps) {
 	const t = await getTranslations('TeamPage.Invites')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: players } = await supabase
 		.from('players')
 		.select('*, users(*)')

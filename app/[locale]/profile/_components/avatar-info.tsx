@@ -8,7 +8,12 @@ import UpdateButton from './update-button'
 
 import pick from 'lodash/pick'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
-import { cookies, headers } from 'next/headers'
+import {
+	type UnsafeUnwrappedCookies,
+	type UnsafeUnwrappedHeaders,
+	cookies,
+	headers
+} from 'next/headers'
 import type { Tables } from '~/types/supabase'
 import Options from './options'
 
@@ -25,9 +30,15 @@ export default function AvatarInfo({
 	children,
 	className
 }: AvatarInfoProps) {
-	const pathname = headers().get('x-pathname') ?? '/profile'
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
-	const locale = cookies().get('NEXT_LOCALE')?.value ?? 'en'
+	const pathname =
+		(headers() as unknown as UnsafeUnwrappedHeaders).get('x-pathname') ??
+		'/profile'
+	const csrfToken =
+		(headers() as unknown as UnsafeUnwrappedHeaders).get('X-CSRF-Token') ??
+		'missing'
+	const locale =
+		(cookies() as unknown as UnsafeUnwrappedCookies).get('NEXT_LOCALE')
+			?.value ?? 'en'
 	const t = useTranslations('ProfilePage.Buttons')
 	const messages = useMessages()
 
@@ -38,11 +49,11 @@ export default function AvatarInfo({
 					width={123}
 					height={123}
 					sizes='(min-width: 768px) 123px, 96px'
-					src={type === 'osu' ? user.osu_avatar : user.discord_avatar ?? ''}
+					src={type === 'osu' ? user.osu_avatar : (user.discord_avatar ?? '')}
 					alt={
 						type === 'osu'
 							? `${user.osu_name}'s pfp`
-							: `${user.discord_name}'s pfp` ?? ''
+							: `${user.discord_name}'s pfp`
 					}
 					className={cn(
 						'mb-4 size-24 border-2 border-milky-white md:size-[123px]',

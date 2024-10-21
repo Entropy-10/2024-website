@@ -7,6 +7,7 @@ import { redirect } from 'next/navigation'
 
 export async function relink(formData: FormData) {
 	const pathname = formData.get('pathname')?.toString()
-	cookies().set('return-url', `${getBaseUrl()}${pathname ?? '/profile'}`)
+	const cookiesList = await cookies()
+	cookiesList.set('return-url', `${getBaseUrl()}${pathname ?? '/profile'}`)
 	redirect(getDiscordAuthUrl(`${getBaseUrl()}/api/auth/relink/discord`))
 }

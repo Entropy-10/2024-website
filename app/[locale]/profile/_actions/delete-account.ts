@@ -14,7 +14,7 @@ export async function deleteAccount(csrfToken: string) {
 
 	if (!session) return deleteAccountError(t)
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: player, error: playerError } = await supabase
 		.from('players')
@@ -57,8 +57,8 @@ export async function deleteAccount(csrfToken: string) {
 		.eq('osu_id', session.sub)
 
 	if (userError) return deleteAccountError(t)
-
-	cookies().delete('session')
+	const cookieList = await cookies()
+	cookieList.delete('session')
 	redirect('/')
 }
 

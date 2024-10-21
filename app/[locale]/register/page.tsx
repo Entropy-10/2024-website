@@ -10,7 +10,11 @@ import type { MetadataProps } from '@types'
 import { isProd } from '@utils/client'
 import MessageBox from '~/components/message-box'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,

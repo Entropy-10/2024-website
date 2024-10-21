@@ -29,7 +29,7 @@ export default async function uploadImage(formData: FormData) {
 			info: { format }
 		} = await sharpImage.toBuffer({ resolveWithObject: true })
 
-		const supabase = createClient(cookies())
+		const supabase = createClient(await cookies())
 		const { error: deleteError } = await supabase.storage
 			.from('flags')
 			.remove([oldFlagPath])

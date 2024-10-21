@@ -5,7 +5,7 @@ import Button from '~/components/ui/button'
 import { denyInvite } from '../_actions/deny-invite'
 
 import { useTranslations } from 'next-intl'
-import { headers } from 'next/headers'
+import { type UnsafeUnwrappedHeaders, headers } from 'next/headers'
 import type { Tables } from '~/types/supabase'
 
 interface InviteProps {
@@ -22,7 +22,9 @@ interface InviteProps {
 export default function Invite({ invite }: InviteProps) {
 	if (!invite.teams) return null
 	const team = invite.teams
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const csrfToken =
+		(headers() as unknown as UnsafeUnwrappedHeaders).get('X-CSRF-Token') ??
+		'missing'
 	const t = useTranslations('ProfilePage.Invites.Invite')
 
 	return (

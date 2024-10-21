@@ -3,7 +3,7 @@ import { cookies } from 'next/headers'
 import Lobby from './lobby'
 
 export default async function Qualifiers() {
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: lobbies } = await supabase
 		.from('lobbies')

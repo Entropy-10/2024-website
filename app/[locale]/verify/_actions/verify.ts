@@ -13,7 +13,7 @@ export async function verify() {
 	if (!session) redirect('/unauthorized')
 
 	const t = await getServerTranslations('VerifyPage.Errors')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: user, error } = await supabase
 		.from('users')

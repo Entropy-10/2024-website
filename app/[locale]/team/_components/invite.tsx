@@ -5,7 +5,7 @@ import { deleteItem } from '../_actions/delete'
 import DeleteButton from './delete-button'
 
 import { useTranslations } from 'next-intl'
-import { headers } from 'next/headers'
+import { type UnsafeUnwrappedHeaders, headers } from 'next/headers'
 import { CsrfInput } from '~/components/csrf-input'
 import type { Tables } from '~/types/supabase'
 
@@ -23,7 +23,9 @@ interface InviteProps {
 
 export default function Invite({ invite, isCaptain }: InviteProps) {
 	if (!invite.users) return null
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const csrfToken =
+		(headers() as unknown as UnsafeUnwrappedHeaders).get('X-CSRF-Token') ??
+		'missing'
 	const t = useTranslations('TeamPage.Invites.Invite')
 	const user = invite.users
 	let statusColor: string

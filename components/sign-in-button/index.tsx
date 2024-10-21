@@ -8,13 +8,14 @@ interface SignInButtonProps extends VariantProps<typeof buttonVariants> {
 	className?: string
 }
 
-export default function SignInButton({
+export default async function SignInButton({
 	className,
 	variant
 }: SignInButtonProps) {
 	const t = useTranslations('Buttons')
-	const pathname = headers().get('x-pathname') ?? '/'
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const headersList = await headers()
+	const pathname = headersList.get('x-pathname') ?? '/'
+	const csrfToken = headersList.get('X-CSRF-Token') ?? 'missing'
 
 	return (
 		<form action={signIn}>

@@ -11,7 +11,11 @@ import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
 import type { Tables } from '~/types/supabase'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,
@@ -23,7 +27,7 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 export default async function SchedulePage() {
 	const t = await getTranslations('SchedulePage')
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: matches } = await supabase
 		.from('matches')
 		.select(

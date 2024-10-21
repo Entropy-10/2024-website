@@ -9,6 +9,6 @@ export async function getServerTranslations<
 		NestedKeyOf<IntlMessages>
 	> = never
 >(namespace?: NestedKey) {
-	const locale = cookies().get('NEXT_LOCALE')?.value ?? 'en'
+	const locale = (await cookies()).get('NEXT_LOCALE')?.value ?? 'en'
 	return await getTranslations({ locale, namespace })
 }

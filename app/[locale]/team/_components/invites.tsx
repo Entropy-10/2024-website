@@ -18,7 +18,7 @@ interface InvitesProps {
 
 export default async function Invites({ teamId, isCaptain }: InvitesProps) {
 	const t = await getTranslations('TeamPage.Invites')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: invites, error } = await supabase
 		.from('invites')
 		.select('*, users(osu_avatar, osu_name, rank, discord_tag)')

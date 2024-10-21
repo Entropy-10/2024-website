@@ -22,7 +22,7 @@ export default async function updateTeam(formData: FormData) {
 		const { id, flag, ...teamData } = updateTeamAction.parse(
 			JSON.parse(formTeamData)
 		)
-		const supabase = createClient(cookies())
+		const supabase = createClient(await cookies())
 		const { error: teamError } = await supabase
 			.from('teams')
 			.update({

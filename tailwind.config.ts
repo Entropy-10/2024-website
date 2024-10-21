@@ -3,7 +3,7 @@ import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 
 export default {
-	content: ['./**/*.{ts,tsx,mdx}'],
+	content: ['./app/**/*.{ts,tsx,mdx}', './components/**/*.{ts,tsx,mdx}'],
 	theme: {
 		extend: {
 			screens: {

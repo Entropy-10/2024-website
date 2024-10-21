@@ -13,7 +13,7 @@ export async function updateAvailability(formData: FormData) {
 	const availability = JSON.parse(
 		String(formData.get('availability'))
 	) as Availability
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: player, error: playerError } = await supabase
 		.from('players')

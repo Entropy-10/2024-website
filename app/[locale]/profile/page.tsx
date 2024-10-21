@@ -17,7 +17,11 @@ import AvatarInfo from './_components/avatar-info'
 import Invites from './_components/invites'
 import Team from './_components/team'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,
@@ -32,7 +36,7 @@ export default async function ProfilePage() {
 
 	const t = await getTranslations('ProfilePage')
 	const buttonT = await getTranslations('Buttons')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: user } = await supabase
 		.from('users')

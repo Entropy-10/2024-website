@@ -31,7 +31,7 @@ export async function createTeam(
 
 	try {
 		const teamData = createTeamAction.parse(JSON.parse(formTeamData))
-		const supabase = createClient(cookies())
+		const supabase = createClient(await cookies())
 
 		const { data: player } = await supabase
 			.from('players')

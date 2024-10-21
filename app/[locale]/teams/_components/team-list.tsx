@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function TeamList() {
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: teams } = await supabase
 		.from('teams')
 		.select('*, players(role, users(osu_id,osu_avatar, osu_name, rank))')

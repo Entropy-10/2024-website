@@ -20,7 +20,7 @@ export async function update(formData: FormData) {
 	}
 
 	try {
-		const supabase = createClient(cookies())
+		const supabase = createClient(await cookies())
 		const { data: tokens } = await supabase
 			.from('tokens')
 			.select()

@@ -10,7 +10,11 @@ import { useTranslations } from 'next-intl'
 import { CustomMDX } from './_components/custom-mdx'
 import MappoolTable from './_components/mappool-table'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,

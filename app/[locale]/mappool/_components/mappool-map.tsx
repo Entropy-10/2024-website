@@ -112,6 +112,7 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 								initial={{ y: 20, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								exit={{ opacity: 0 }}
+								// @ts-expect-error: framer-motion tailwind typescript bug
 								className='max-w-[230px] text-sm/5'
 							>
 								<Link

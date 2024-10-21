@@ -10,16 +10,17 @@ import { verify } from './_actions/verify'
 import VerifyButton from './_components/verify-button'
 
 interface VerifyPageProps {
-	searchParams: {
+	searchParams: Promise<{
 		status?: 'success' | 'error'
 		message?: string
-	}
+	}>
 }
 
-export default async function VerifyPage({ searchParams }: VerifyPageProps) {
+export default async function VerifyPage(props: VerifyPageProps) {
+	const searchParams = await props.searchParams
 	const session = await getSession()
 	const t = await getTranslations('VerifyPage')
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const csrfToken = (await headers()).get('X-CSRF-Token') ?? 'missing'
 	const { status, message } = searchParams
 
 	// this is pretty cringe... not going to fix tho :p

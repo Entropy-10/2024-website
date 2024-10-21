@@ -11,7 +11,7 @@ export async function denyInvite(formData: FormData) {
 	if (!inviteId) return
 
 	const t = await getServerTranslations('ProfilePage.Errors')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { error } = await supabase
 		.from('invites')

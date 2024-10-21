@@ -20,9 +20,12 @@ import type { ReactNode } from 'react'
 import PreviewWarning from './_components/preview-warning'
 import UpdateScopes from './_components/update-scopes'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
-	const csrfToken = headers().get('X-CSRF-Token') || 'missing'
+	const csrfToken = (await headers()).get('X-CSRF-Token') || 'missing'
 
 	return {
 		metadataBase: new URL(getBaseUrl()),
@@ -45,17 +48,19 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 
 interface LocaleLayoutProps {
 	children: ReactNode
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }
 
-export default async function LocaleLayout({
-	children,
-	params: { locale }
-}: LocaleLayoutProps) {
+export default async function LocaleLayout(props: LocaleLayoutProps) {
+	const params = await props.params
+	const { locale } = params
+
+	const { children } = props
+
 	if (!locales.includes(locale)) notFound()
 	const messages = await getMessages()
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: tokenState } = await supabase
 		.from('tokens')
 		.select('old')

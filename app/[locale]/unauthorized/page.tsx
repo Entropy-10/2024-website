@@ -1,19 +1,19 @@
 import { useTranslations } from 'next-intl'
+import { use } from 'react'
 import MessageBox from '~/components/message-box'
 import SignInButton from '~/components/sign-in-button'
 import Background from '~/components/ui/background'
 import Button from '~/components/ui/button'
 
 interface UnauthorizedPageProps {
-	searchParams: {
+	searchParams: Promise<{
 		type: 'auth-error'
 		message?: string
-	}
+	}>
 }
 
-export default function UnauthorizedPage({
-	searchParams
-}: UnauthorizedPageProps) {
+export default function UnauthorizedPage(props: UnauthorizedPageProps) {
+	const searchParams = use(props.searchParams)
 	const t = useTranslations('UnauthorizedPage')
 	const { type, message } = searchParams
 	const authError = type === 'auth-error'

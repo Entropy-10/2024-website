@@ -23,7 +23,7 @@ export async function invite(formData: FormData) {
 
 	if (!teamId || !userId) return
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data: player } = await supabase
 		.from('players')

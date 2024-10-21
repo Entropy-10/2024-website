@@ -16,7 +16,7 @@ import UserDropdown from './user-dropdown'
 export default async function Header() {
 	const t = await getTranslations('NavItems')
 	const session = await getSession()
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	let inviteCount: number | null = null
 
 	if (session) {

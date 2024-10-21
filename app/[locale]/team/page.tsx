@@ -19,7 +19,11 @@ import type { MetadataProps } from '@types'
 import { NextIntlClientProvider } from 'next-intl'
 import Editor from './_components/editor'
 
-export async function generateMetadata({ params: { locale } }: MetadataProps) {
+export async function generateMetadata(props: MetadataProps) {
+	const params = await props.params
+
+	const { locale } = params
+
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
 		locale,
@@ -30,14 +34,14 @@ export async function generateMetadata({ params: { locale } }: MetadataProps) {
 
 export default async function TeamPage() {
 	const session = await getSession()
-	const locale = cookies().get('NEXT_LOCALE')?.value ?? 'en'
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const locale = (await cookies()).get('NEXT_LOCALE')?.value ?? 'en'
+	const csrfToken = (await headers()).get('X-CSRF-Token') ?? 'missing'
 	if (!session) redirect('/unauthorized')
 
 	const messages = await getMessages()
 	const t = await getTranslations('TeamPage')
 	const buttonT = await getTranslations('Buttons')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 
 	const { data } = await supabase
 		.from('players')

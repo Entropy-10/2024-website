@@ -30,14 +30,14 @@ export async function GET(request: NextRequest) {
 		grantType: 'authorization_code'
 	})
 
-	const osuTokensJWT = cookies().get('osu-tokens')?.value
+	const osuTokensJWT = (await cookies()).get('osu-tokens')?.value
 	if (!osuTokensJWT) return authError(url)
 
 	const osuTokens = await decrypt<Token>(osuTokensJWT)
 	if (!osuTokens) return authError(url)
 
 	const osuClient = new Client(osuTokens.access_token)
-	const supabase = createClient(cookies(), env.SUPABASE_SERVICE_KEY)
+	const supabase = createClient(await cookies(), env.SUPABASE_SERVICE_KEY)
 
 	try {
 		const discordUser = await discordAuth.getUser(tokens.access_token)
@@ -87,17 +87,18 @@ export async function GET(request: NextRequest) {
 			},
 			expires
 		})
-
-		cookies().delete('osu-tokens')
-		cookies().set('session', session, { expires, httpOnly: true })
+		const cookiesList = await cookies()
+		cookiesList.delete('osu-tokens')
+		cookiesList.set('session', session, { expires, httpOnly: true })
 	} catch (err) {
-		cookies().delete('return-url')
-		cookies().delete('osu-tokens')
+		const cookiesList = await cookies()
+		cookiesList.delete('return-url')
+		cookiesList.delete('osu-tokens')
 		return authError(url)
 	}
 
-	const returnUrl = cookies().get('return-url')?.value
-	if (returnUrl) cookies().delete('return-url')
+	const returnUrl = (await cookies()).get('return-url')?.value
+	if (returnUrl) (await cookies()).delete('return-url')
 
 	return NextResponse.redirect(returnUrl ?? url.origin)
 }

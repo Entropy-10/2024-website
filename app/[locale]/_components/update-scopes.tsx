@@ -1,10 +1,12 @@
-import { headers } from 'next/headers'
+import { type UnsafeUnwrappedHeaders, headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { CsrfInput } from '~/components/csrf-input'
 import Button from '~/components/ui/button'
 
 export default function UpdateScopes() {
-	const csrfToken = headers().get('X-CSRF-Token') ?? 'missing'
+	const csrfToken =
+		(headers() as unknown as UnsafeUnwrappedHeaders).get('X-CSRF-Token') ??
+		'missing'
 
 	async function updateScopes() {
 		'use server'

@@ -39,7 +39,7 @@ export async function refreshDiscordToken(tokens: Tables<'tokens'>) {
 		scope: 'identify guilds.members.read'
 	})
 
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { error } = await supabase
 		.from('tokens')
 		.update({

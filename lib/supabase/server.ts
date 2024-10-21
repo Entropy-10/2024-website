@@ -6,7 +6,7 @@ import type { cookies } from 'next/headers'
 import type { Database } from '~/types/supabase'
 
 export const createClient = (
-	cookieStore: ReturnType<typeof cookies>,
+	cookieStore: Awaited<ReturnType<typeof cookies>>,
 	serviceKey?: string
 ) => {
 	const token = cookieStore.get('session')?.value

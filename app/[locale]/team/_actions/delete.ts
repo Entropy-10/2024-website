@@ -15,7 +15,7 @@ export async function deleteItem(formData: FormData) {
 	if (!id || !parsedType.success) return
 
 	const type = parsedType.data
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const t = await getServerTranslations('TeamPage.Errors')
 
 	const { error } = await supabase

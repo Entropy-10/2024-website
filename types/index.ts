@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExtendedDocument extends Document {
 	startViewTransition?: (callback: () => Promise<void> | void) => ViewTransition
 }
@@ -9,7 +10,7 @@ export interface ViewTransition {
 }
 
 export interface MetadataProps {
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }
 
 export interface UptimeStatusPage {

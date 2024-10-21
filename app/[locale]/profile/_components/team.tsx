@@ -12,7 +12,7 @@ interface TeamProps {
 
 export default async function Team({ userId }: TeamProps) {
 	const t = await getTranslations('ProfilePage.Team')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data } = await supabase
 		.from('players')
 		.select('joined_at, teams(*)')

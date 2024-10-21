@@ -17,7 +17,7 @@ interface InvitesProps {
 
 export default async function Invites({ userId }: InvitesProps) {
 	const t = await getTranslations('ProfilePage.Invites')
-	const supabase = createClient(cookies())
+	const supabase = createClient(await cookies())
 	const { data: invites, error } = await supabase
 		.from('invites')
 		.select('*, teams(id, flag, name, timezone)')
