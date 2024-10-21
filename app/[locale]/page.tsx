@@ -1,6 +1,5 @@
 import { links } from '@siteConfig'
-import pick from 'lodash/pick'
-import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +15,6 @@ const Originals = dynamic(() => import('./_components/originals'))
 export default function Home() {
 	const buttonT = useTranslations('Buttons')
 	const t = useTranslations('HomePage')
-	const messages = useMessages()
 
 	return (
 		<div>
@@ -80,12 +78,8 @@ export default function Home() {
 			</Background>
 
 			<div className='flex w-full flex-col overflow-x-hidden'>
-				<NextIntlClientProvider messages={pick(messages, 'HomePage.Features')}>
-					<Features />
-				</NextIntlClientProvider>
-
+				<Features />
 				<Originals />
-
 				<Sponsor />
 			</div>
 		</div>

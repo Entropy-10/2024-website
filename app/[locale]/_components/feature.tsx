@@ -8,15 +8,19 @@ import Schedule from '~/components/icons/schedule'
 import { Link } from '@navigation'
 import type { Feature as FeatureType } from '@types'
 
-export default function Feature({ name, link, className }: FeatureType) {
+export default function Feature({ name, link }: FeatureType) {
 	const titlesT = useTranslations('HomePage.Features.Titles')
 	const descriptionsT = useTranslations('HomePage.Features.Descriptions')
 
 	return (
 		<div
 			className={cn(
-				'relative flex w-full space-x-5 bg-[#5E72EB] py-5 pl-5 md:h-28 md:items-center md:px-5 md:py-0 xl:max-w-[400px] xl:justify-center',
-				className
+				'relative flex w-full space-x-5 py-5 pl-5 md:h-28 md:items-center md:px-5 md:py-0 xl:max-w-[400px] xl:justify-center',
+				name === 'mappool'
+					? 'bg-[#5E72EB]'
+					: name === 'format'
+						? 'bg-feature2'
+						: 'bg-[#807EE1]'
 			)}
 		>
 			{name === 'format' ? (
