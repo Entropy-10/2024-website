@@ -8,6 +8,7 @@ import { Client } from 'osu-web.js'
 import { authError, getDiscordAvatarUrl } from '../../utils'
 
 import { decrypt, encrypt } from '@session'
+import { isProd } from '@utils/client'
 import { getTranslations } from 'next-intl/server'
 import type { NextRequest } from 'next/server'
 import type { Token } from 'osu-web.js'
@@ -89,7 +90,12 @@ export async function GET(request: NextRequest) {
 		})
 		const cookiesList = await cookies()
 		cookiesList.delete('osu-tokens')
-		cookiesList.set('session', session, { expires, httpOnly: true })
+		cookiesList.set('session', session, {
+			expires,
+			sameSite: 'lax',
+			httpOnly: true,
+			secure: isProd
+		})
 	} catch (err) {
 		const cookiesList = await cookies()
 		cookiesList.delete('return-url')

@@ -6,6 +6,7 @@ import { NextResponse } from 'next/server'
 import { authError } from '../../utils'
 
 import { encrypt } from '@session'
+import { isProd } from '@utils/client'
 import { getTranslations } from 'next-intl/server'
 import type { NextRequest } from 'next/server'
 
@@ -16,17 +17,16 @@ export async function GET(request: NextRequest) {
 	const url = new URL(request.url)
 
 	const t = await getTranslations({ locale, namespace: 'APICallbacks' })
-
-	if (!code) {
-		return authError(url, t('Errors.missingCode'))
-	}
+	if (!code) return authError(url, t('Errors.missingCode'))
 
 	try {
 		;(await cookies()).delete('session')
 		const tokens = await osuAuth.requestToken(code)
 		const cookiesList = await cookies()
 		cookiesList.set('osu-tokens', await encrypt(tokens, '10 mins from now'), {
-			httpOnly: true
+			sameSite: 'lax',
+			httpOnly: true,
+			secure: isProd
 		})
 	} catch (err) {
 		console.error(err)

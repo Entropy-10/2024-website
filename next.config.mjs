@@ -1,13 +1,14 @@
 import './env.mjs'
 
-import nextIntl from 'next-intl/plugin'
+import createNextIntlPlugin from 'next-intl/plugin'
 
-const withNextIntl = nextIntl('./i18n.ts')
+const withNextIntl = createNextIntlPlugin()
 
 export default withNextIntl({
 	experimental: {
 		mdxRs: true,
-		serverActions: { bodySizeLimit: '5mb' }
+		serverActions: { bodySizeLimit: '5mb' },
+		reactCompiler: true
 	},
 	pageExtensions: ['mdx', 'ts', 'tsx'],
 	images: {

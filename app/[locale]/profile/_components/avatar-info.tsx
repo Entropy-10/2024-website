@@ -7,7 +7,8 @@ import { update } from '../_actions/update'
 import UpdateButton from './update-button'
 
 import pick from 'lodash/pick'
-import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages, getTranslations } from 'next-intl/server'
 import { cookies, headers } from 'next/headers'
 import type { Tables } from '~/types/supabase'
 import Options from './options'
@@ -30,8 +31,8 @@ export default async function AvatarInfo({
 	const pathname = headerList.get('x-pathname') ?? '/profile'
 	const csrfToken = headerList.get('X-CSRF-Token') ?? 'missing'
 	const locale = cookiesList.get('NEXT_LOCALE')?.value ?? 'en'
-	const t = useTranslations('ProfilePage.Buttons')
-	const messages = useMessages()
+	const t = await getTranslations('ProfilePage.Buttons')
+	const messages = await getMessages()
 
 	return (
 		<div className={cn('flex gap-2', className)}>

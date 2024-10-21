@@ -29,5 +29,6 @@ export async function getSession() {
 }
 
 export async function deleteSession() {
-	;(await cookies()).set('session', '', { expires: new Date(0) })
+	const cookiesList = await cookies()
+	cookiesList.set('session', '', { expires: new Date(0) })
 }

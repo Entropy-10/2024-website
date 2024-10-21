@@ -1,22 +1,18 @@
-import '~/styles/globals.css'
-
 import Loglib from '@loglib/tracker/react'
 import { genOgTwitterImage } from '@metadata'
-import { locales } from '@siteConfig'
-import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
-import { getMessages, getTranslations } from 'next-intl/server'
-import { notFound } from 'next/navigation'
-
-import Footer from './_components/footer'
-import Header from './_components/header'
-
+import { routing } from '@navigation'
 import { createClient } from '@supabase/server'
 import type { MetadataProps } from '@types'
-import pick from 'lodash/pick'
+import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
+import { getMessages, getTranslations } from 'next-intl/server'
 import { cookies, headers } from 'next/headers'
+import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
+import '~/styles/globals.css'
+import Footer from './_components/footer'
+import Header from './_components/header'
 import PreviewWarning from './_components/preview-warning'
 import UpdateScopes from './_components/update-scopes'
 
@@ -51,13 +47,14 @@ interface LocaleLayoutProps {
 	params: Promise<{ locale: string }>
 }
 
-export default async function LocaleLayout(props: LocaleLayoutProps) {
-	const params = await props.params
-	const { locale } = params
-
-	const { children } = props
-
-	if (!locales.includes(locale)) notFound()
+export default async function LocaleLayout({
+	children,
+	params
+}: LocaleLayoutProps) {
+	const { locale } = await params
+	if (!routing.locales.includes(locale)) {
+		notFound()
+	}
 	const messages = await getMessages()
 
 	const supabase = createClient(await cookies())
@@ -74,10 +71,7 @@ export default async function LocaleLayout(props: LocaleLayoutProps) {
 					inter.className
 				)}
 			>
-				<NextIntlClientProvider
-					locale={locale}
-					messages={pick(messages, 'ErrorPage')}
-				>
+				<NextIntlClientProvider messages={messages}>
 					<Header />
 					{isPreview && <PreviewWarning />}
 					{tokenState?.old && <UpdateScopes />}

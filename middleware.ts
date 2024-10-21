@@ -1,16 +1,13 @@
-import { locales } from '@siteConfig'
 import csrf from 'edge-csrf'
 import createIntlMiddleware from 'next-intl/middleware'
 
 import { env } from '@env'
+import { routing } from '@navigation'
 import { decrypt, encrypt } from '@session'
+import { isProd } from '@utils/client'
 import { type NextRequest, NextResponse } from 'next/server'
 
-const intlMiddleware = createIntlMiddleware({
-	locales,
-	localePrefix: 'as-needed',
-	defaultLocale: 'en'
-})
+const intlMiddleware = createIntlMiddleware(routing)
 
 const csrfProtect = csrf({
 	cookie: {
@@ -38,7 +35,9 @@ export default async function middleware(request: NextRequest) {
 		response.cookies.set({
 			name: 'session',
 			value: await encrypt(parsed),
+			sameSite: 'lax',
 			httpOnly: true,
+			secure: isProd,
 			expires: parsed.expires
 		})
 	}

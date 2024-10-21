@@ -26,7 +26,7 @@
 			"@schemas": ["lib/schemas.ts"],
 			"@session": ["lib/session.ts"],
 			"@metadata": ["lib/metadata.ts"],
-			"@navigation": ["lib/navigation.ts"],
+			"@navigation": ["i18n/routing.ts"],
 			"@siteConfig": ["lib/site-config.ts"],
 			"~/*": ["./*"]
 		}

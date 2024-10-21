@@ -11,7 +11,6 @@ import MappoolContainer from './_components/mappool-container'
 
 export async function generateMetadata(props: MetadataProps) {
 	const params = await props.params
-
 	const { locale } = params
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
