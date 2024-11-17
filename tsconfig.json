@@ -17,7 +17,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@supabase/*": ["lib/supabase/*"],
-			"@env": ["env.mjs"],
+			"@env": ["env.ts"],
 			"@osu": ["lib/osu.ts"],
 			"@discord": ["lib/discord.ts"],
 			"@sheets": ["lib/sheets.ts"],

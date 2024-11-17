@@ -15,9 +15,7 @@ export async function update(formData: FormData) {
 	const session = await getSession()
 	const t = await getServerTranslations('ProfilePage.Errors')
 
-	if (!session) {
-		return updateError(t)
-	}
+	if (!session) return updateError(t)
 
 	try {
 		const supabase = createClient(await cookies())
@@ -81,7 +79,7 @@ export async function update(formData: FormData) {
 }
 
 function updateError(t: Awaited<ReturnType<typeof getServerTranslations>>) {
-	redirect(
+	return redirect(
 		`/profile?title=${t('FailedUpdate.title')}&message=${t(
 			'FailedUpdate.message'
 		)}`

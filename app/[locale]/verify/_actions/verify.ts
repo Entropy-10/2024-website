@@ -57,5 +57,5 @@ export async function verify() {
 }
 
 function verifyError(t: Awaited<ReturnType<typeof getServerTranslations>>) {
-	redirect(`/verify?status=error&message=${t('verificationFailed')}`)
+	return redirect(`/verify?status=error&message=${t('verificationFailed')}`)
 }

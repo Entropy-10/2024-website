@@ -50,7 +50,6 @@ export default function CountdownContainer() {
 			<AnimatePresence mode='wait'>
 				{!completed && (
 					<motion.div
-						// @ts-expect-error: framer-motion tailwind typescript bug
 						className='flex h-28 w-full flex-col items-center justify-center bg-feature4 text-milky-white xl:min-w-[450px] xl:flex-row xl:gap-5 xl:pl-5'
 						initial={{ x: 300, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}

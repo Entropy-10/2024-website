@@ -38,7 +38,7 @@ export default function Feature({ name, link }: FeatureType) {
 
 			<Link
 				href={link}
-				aria-label={titlesT(name).toLowerCase().replace('.', '')}
+				aria-label={titlesT(name).toLowerCase().replace(/./g, '')}
 			>
 				<ClickArrow className='absolute right-3 md:hidden' />
 			</Link>
