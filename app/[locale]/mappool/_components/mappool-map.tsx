@@ -51,7 +51,7 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 			style={{ color: ModColor[map.mod] }}
 			className='group relative h-[187px] w-[400px] shadow-[0px_4px_15px_0px_rgba(94,114,235,0.45)]'
 		>
-			<div className='absolute top-2 right-2 z-20 bg-milky-white px-1 font-extrabold text-sm shadow'>
+			<div className='absolute top-2 right-2 z-20 bg-milky-white px-1 font-extrabold text-sm shadow-sm'>
 				{map.beatmap_id}
 			</div>
 
@@ -63,7 +63,7 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 				alt='map bg'
 				className='h-[112px] w-[400px] select-none'
 			/>
-			<div className='absolute bottom-[74px] h-[112px] w-full bg-gradient-to-t from-15% from-milky-white to-65% to-transparent opacity-100 transition-all sm:opacity-0 sm:group-hover:opacity-100'>
+			<div className='absolute bottom-[74px] h-[112px] w-full bg-linear-to-t from-15% from-milky-white to-65% to-transparent opacity-100 transition-all sm:opacity-0 sm:group-hover:opacity-100'>
 				<div className='relative h-full'>
 					<div className='absolute bottom-0 flex w-full justify-between px-3 font-extrabold text-sm'>
 						<div>MAPPER: {map.mapper}</div>
@@ -79,7 +79,7 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 					<button
 						type='button'
 						onClick={() => setShowModInfo(!showModInfo)}
-						className='text-milky-white focus:outline-none'
+						className='text-milky-white focus:outline-hidden'
 						disabled={map.mod !== 'LM'}
 					>
 						<div
@@ -112,12 +112,13 @@ export default function MappoolMap({ map }: MappoolMapProps) {
 								initial={{ y: 20, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								exit={{ opacity: 0 }}
+								// @ts-ignore
 								className='max-w-[230px] text-sm/5'
 							>
 								<Link
 									href={buildUrl.beatmap(map.beatmap_id)}
 									target='_blank'
-									className='font-extrabold text-lg/6 hover:underline focus:outline-none'
+									className='font-extrabold text-lg/6 hover:underline focus:outline-hidden'
 								>
 									<p className='truncate'>{map.name}</p>
 								</Link>

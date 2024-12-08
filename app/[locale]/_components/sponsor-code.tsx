@@ -21,7 +21,7 @@ export default function SponsorCode() {
 		<button
 			type='button'
 			onClick={() => copyToClipboard()}
-			className='group relative border border-dashed px-6 font-black text-dark-blue focus:outline-none'
+			className='group relative border border-dashed px-6 font-black text-dark-blue focus:outline-hidden'
 		>
 			TEST
 			{!success && (

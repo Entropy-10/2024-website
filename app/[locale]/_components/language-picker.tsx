@@ -26,7 +26,7 @@ export default function LanguagePicker({
 
 	return (
 		<Dropdown.Root>
-			<Dropdown.Trigger className='group flex w-12 select-none items-center justify-between focus:outline-none'>
+			<Dropdown.Trigger className='group flex w-12 select-none items-center justify-between focus:outline-hidden'>
 				<Image
 					width={20}
 					height={15}
@@ -52,7 +52,7 @@ export default function LanguagePicker({
 								href={pathname}
 								locale={code}
 								className={cn(
-									'flex h-full w-full cursor-pointer select-none items-center justify-between px-3 py-0.5 focus:outline-none',
+									'flex h-full w-full cursor-pointer select-none items-center justify-between px-3 py-0.5 focus:outline-hidden',
 									locale === code && 'bg-light-blue font-bold text-milky-white'
 								)}
 							>

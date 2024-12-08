@@ -64,7 +64,7 @@ export default async function LocaleLayout({
 		.maybeSingle()
 
 	return (
-		<html lang={locale} className='!scroll-smooth'>
+		<html lang={locale} className='scroll-smooth!'>
 			<body
 				className={cn(
 					'flex min-h-screen flex-col overflow-x-hidden',

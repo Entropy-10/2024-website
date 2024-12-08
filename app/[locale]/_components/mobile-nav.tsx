@@ -20,7 +20,7 @@ export default async function MobileNav({ user, inviteCount }: MobileNavProps) {
 	return (
 		<nav className='md:hidden'>
 			<Dropdown.Root>
-				<Dropdown.Trigger className='relative flex items-center justify-between gap-1 bg-gradient-to-r from-[-100%] from-light-blue to-salmon px-1 py-0.5 text-milky-white focus:outline-none'>
+				<Dropdown.Trigger className='relative flex items-center justify-between gap-1 bg-linear-to-r from-[-100%] from-light-blue to-salmon px-1 py-0.5 text-milky-white focus:outline-hidden'>
 					{inviteCount ? (
 						<div className='-left-1 -top-1 absolute'>
 							<div className='relative'>
@@ -101,10 +101,10 @@ export default async function MobileNav({ user, inviteCount }: MobileNavProps) {
 								<div className='h-px w-full bg-light-blue' />
 							</div>
 
-							<Dropdown.Item className='p-0 data-[highlighted]:bg-red-400'>
+							<Dropdown.Item className='p-0 data-highlighted:bg-red-400'>
 								<SignOutButton
 									text={buttonT('signOut')}
-									className='h-full w-full px-3 py-0.5 hover:text-milky-white focus:outline-none'
+									className='h-full w-full px-3 py-0.5 hover:text-milky-white focus:outline-hidden'
 								/>
 							</Dropdown.Item>
 						</>

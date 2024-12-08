@@ -19,7 +19,7 @@ export default function UserDropdown({ user, inviteCount }: UserDropdownProps) {
 
 	return (
 		<Dropdown.Root>
-			<Dropdown.Trigger className='group relative hidden max-w-44 items-center justify-between bg-gradient-to-r from-[-100%] from-light-blue to-salmon px-1 py-0.5 text-milky-white focus:outline-none md:flex'>
+			<Dropdown.Trigger className='group relative hidden max-w-44 items-center justify-between bg-linear-to-r from-[-100%] from-light-blue to-salmon px-1 py-0.5 text-milky-white focus:outline-hidden md:flex'>
 				{inviteCount ? (
 					<div className='-left-1 -top-1 absolute'>
 						<div className='relative'>
@@ -85,10 +85,10 @@ export default function UserDropdown({ user, inviteCount }: UserDropdownProps) {
 					<div className='h-px w-full bg-light-blue' />
 				</div>
 
-				<Dropdown.Item className='p-0 data-[highlighted]:bg-red-400'>
+				<Dropdown.Item className='p-0 data-highlighted:bg-red-400'>
 					<SignOutButton
 						text={buttonT('signOut')}
-						className='h-full w-full px-3 py-0.5 hover:text-milky-white focus:outline-none'
+						className='h-full w-full px-3 py-0.5 hover:text-milky-white focus:outline-hidden'
 					/>
 				</Dropdown.Item>
 			</Dropdown.Content>

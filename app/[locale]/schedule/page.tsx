@@ -100,7 +100,7 @@ export default async function SchedulePage() {
 										alt='team flag'
 										className='h-[90px]'
 									/>
-									<div className='absolute top-0 right-0 h-full w-full bg-gradient-to-r from-transparent to-60% to-milky-white' />
+									<div className='absolute top-0 right-0 h-full w-full bg-linear-to-r from-transparent to-60% to-milky-white' />
 								</div>
 
 								<div className='padding absolute top-0 left-0 z-20 flex h-full w-full items-center justify-between'>
@@ -154,7 +154,7 @@ export default async function SchedulePage() {
 								</div>
 
 								<div className='relative'>
-									<div className='absolute top-0 left-0 h-full w-full bg-gradient-to-l from-transparent to-60% to-milky-white' />
+									<div className='absolute top-0 left-0 h-full w-full bg-linear-to-l from-transparent to-60% to-milky-white' />
 
 									<Image
 										width={230}

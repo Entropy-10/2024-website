@@ -62,7 +62,7 @@ const ImagePicker = forwardRef<HTMLInputElement, ImagePickerProps>(
 					{(previewImage || defaultValue) && (
 						<>
 							<button
-								className='absolute top-1 right-1 z-20 text-milky-white drop-shadow-[0px_0px_1px_#000000] focus:outline-none'
+								className='absolute top-1 right-1 z-20 text-milky-white drop-shadow-[0px_0px_1px_#000000] focus:outline-hidden'
 								type='button'
 								onClick={() => {
 									if (defaultValue) setDefaultValue(undefined)

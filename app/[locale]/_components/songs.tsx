@@ -21,6 +21,7 @@ export default function Songs() {
 							duration: 15,
 							ease: 'linear'
 						}}
+						// @ts-ignore
 						className='absolute flex gap-5'
 					>
 						<SongsContainer />

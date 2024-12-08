@@ -59,7 +59,7 @@ export default function Options() {
 			</TextModal>
 
 			<Dropdown.Root>
-				<Dropdown.Trigger className='flex w-4 items-center bg-milky-white hover:bg-medium-blue focus:outline-none'>
+				<Dropdown.Trigger className='flex w-4 items-center bg-milky-white hover:bg-medium-blue focus:outline-hidden'>
 					<MoreVertical
 						strokeWidth={3}
 						className='w-4 stroke-medium-blue hover:stroke-milky-white'
@@ -71,7 +71,7 @@ export default function Options() {
 						<button
 							type='button'
 							onClick={() => setOpen(true)}
-							className='w-full px-3 py-0.5 text-left text-red-400 hover:bg-red-400 hover:text-milky-white focus:outline-none'
+							className='w-full px-3 py-0.5 text-left text-red-400 hover:bg-red-400 hover:text-milky-white focus:outline-hidden'
 						>
 							{t('DeleteAccount.Buttons.confirmDelete')}
 						</button>

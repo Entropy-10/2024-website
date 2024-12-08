@@ -27,7 +27,7 @@ export default async function Invite({ invite }: InviteProps) {
 	const t = useTranslations('ProfilePage.Invites.Invite')
 
 	return (
-		<div className='w-[200px] bg-gradient-to-r from-light-blue to-lavender p-4 md:w-[250px]'>
+		<div className='w-[200px] bg-linear-to-r from-light-blue to-lavender p-4 md:w-[250px]'>
 			<div className='mb-1.5 flex flex-col items-center uppercase md:mb-3'>
 				<Image
 					className='h-[60px] w-[135px] md:h-[72px] md:w-[162px]'

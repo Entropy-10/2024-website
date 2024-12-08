@@ -42,7 +42,7 @@ export default function Originals() {
 									<Link
 										href={link}
 										target='_blank'
-										className='hover:underline focus:outline-none'
+										className='hover:underline focus:outline-hidden'
 									>
 										{name} by {artist}
 									</Link>

@@ -230,7 +230,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 				>
 					{editing ? (
 						<input
-							className='h-6 border border-dashed bg-transparent px-1 font-semibold focus:outline-none'
+							className='h-6 border border-dashed bg-transparent px-1 font-semibold focus:outline-hidden'
 							{...register('name')}
 						/>
 					) : (
@@ -238,7 +238,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 					)}
 					{editing ? (
 						<input
-							className='h-6 border border-dashed bg-transparent px-1 font-semibold focus:outline-none'
+							className='h-6 border border-dashed bg-transparent px-1 font-semibold focus:outline-hidden'
 							{...register('acronym')}
 						/>
 					) : (
@@ -250,7 +250,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 								defaultValue={team.timezone}
 								className={{
 									trigger:
-										'h-6 w-full border-milky-white border-dashed stroke-milky-white font-semibold text-milky-white focus:outline-none'
+										'h-6 w-full border-milky-white border-dashed stroke-milky-white font-semibold text-milky-white focus:outline-hidden'
 								}}
 								{...register('timezone')}
 							/>

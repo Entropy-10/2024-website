@@ -29,7 +29,7 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
 				href={link}
 				ref={forwardedRef}
 				className={cn(
-					'relative select-none text-left transition-colors hover:cursor-pointer hover:text-light-blue focus:outline-none',
+					'relative select-none text-left transition-colors hover:cursor-pointer hover:text-light-blue focus:outline-hidden',
 					className,
 					currentPath && cn('font-extrabold text-light-blue', activeClassName)
 				)}
@@ -40,6 +40,7 @@ const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
 					<motion.div
 						layoutId='underline'
 						transition={{ duration: 0.2 }}
+						// @ts-ignore
 						className={cn(
 							'absolute bottom-0 h-[2.5px] w-full bg-light-blue',
 							activeClassName

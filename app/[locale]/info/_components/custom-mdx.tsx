@@ -8,7 +8,7 @@ const components = {
 		</h1>
 	),
 	a: props => (
-		<a {...props} className='underline focus:outline-none'>
+		<a {...props} className='underline focus:outline-hidden'>
 			{props.children}
 		</a>
 	),

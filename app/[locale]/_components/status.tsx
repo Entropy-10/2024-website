@@ -25,7 +25,7 @@ export default async function Status() {
 
 	return (
 		<Link
-			className='flex items-center gap-2 rounded px-2 py-1 hover:bg-blue/30'
+			className='flex items-center gap-2 rounded-sm px-2 py-1 hover:bg-blue/30'
 			href='https://status.test-open.com'
 			target='_blank'
 		>

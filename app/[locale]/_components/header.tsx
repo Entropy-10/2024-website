@@ -33,7 +33,7 @@ export default async function Header() {
 			<section className='padding flex h-full grow items-center justify-between'>
 				<Link
 					href='/'
-					className='flex cursor-pointer items-center space-x-2 focus:outline-none'
+					className='flex cursor-pointer items-center space-x-2 focus:outline-hidden'
 				>
 					<Logo h={38} w={44} className='h-[38px] w-[44px]' />
 					<h1 className='text-xl'>

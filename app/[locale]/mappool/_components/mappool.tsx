@@ -90,7 +90,7 @@ function ModPoolContainer({ children }: { children: React.ReactNode }) {
 function Divider() {
 	return (
 		<div className='flex flex-row-reverse'>
-			<div className='h-[4px] w-[65%] bg-gradient-to-l from-light-blue via-salmon to-[#FDC094]' />
+			<div className='h-[4px] w-[65%] bg-linear-to-l from-light-blue via-salmon to-[#FDC094]' />
 		</div>
 	)
 }

@@ -191,7 +191,7 @@ const CarouselPrevious = React.forwardRef<
 			type='button'
 			ref={ref}
 			className={cn(
-				'-left-12 -translate-y-1/2 absolute top-1/2 size-12 focus:outline-none',
+				'-left-12 -translate-y-1/2 absolute top-1/2 size-12 focus:outline-hidden',
 				className
 			)}
 			disabled={!canScrollPrev}
@@ -217,7 +217,7 @@ const CarouselNext = React.forwardRef<
 			type='button'
 			ref={ref}
 			className={cn(
-				'-right-12 -translate-y-1/2 absolute top-1/2 size-12 focus:outline-none',
+				'-right-12 -translate-y-1/2 absolute top-1/2 size-12 focus:outline-hidden',
 				className
 			)}
 			disabled={!canScrollNext}

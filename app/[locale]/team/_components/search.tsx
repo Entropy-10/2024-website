@@ -89,7 +89,7 @@ export default function Search({
 							<button
 								type='button'
 								onClick={() => setSelectedUser(null)}
-								className='absolute top-[6px] right-1.5 focus:outline-none'
+								className='absolute top-[6px] right-1.5 focus:outline-hidden'
 							>
 								<X
 									size={20}
@@ -124,7 +124,7 @@ export default function Search({
 										type='button'
 										onClick={() => handleSelect(result)}
 										key={result.osu_id}
-										className='flex w-full items-center gap-1 p-0.5 text-dark-blue hover:bg-light-blue/10 hover:text-light-blue focus:outline-none'
+										className='flex w-full items-center gap-1 p-0.5 text-dark-blue hover:bg-light-blue/10 hover:text-light-blue focus:outline-hidden'
 									>
 										<Image
 											width={25}

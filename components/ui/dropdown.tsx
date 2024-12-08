@@ -20,7 +20,7 @@ const Content = forwardRef<
 			align='end'
 			{...props}
 			className={cn(
-				'z-30 flex w-32 flex-col bg-milky-white text-sm drop-shadow',
+				'z-30 flex w-32 flex-col bg-milky-white text-sm drop-shadow-sm',
 				className
 			)}
 		/>
@@ -37,7 +37,7 @@ const Item = forwardRef<
 		ref={ref}
 		{...props}
 		className={cn(
-			'px-3 py-0.5 font-semibold text-light-blue text-sm data-[highlighted]:bg-light-blue data-[highlighted]:text-milky-white data-[highlighted]:outline-none',
+			'px-3 py-0.5 font-semibold text-light-blue text-sm data-highlighted:bg-light-blue data-highlighted:text-milky-white data-highlighted:outline-hidden',
 			className
 		)}
 	/>

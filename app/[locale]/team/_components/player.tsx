@@ -19,7 +19,7 @@ export default function Player({ player, userId, isCaptain }: PlayerProps) {
 	return (
 		<div
 			className={cn(
-				'h-full w-[200px] bg-gradient-to-r from-light-blue to-salmon p-4 md:w-[250px]'
+				'h-full w-[200px] bg-linear-to-r from-light-blue to-salmon p-4 md:w-[250px]'
 			)}
 		>
 			<div className='mb-1.5 flex flex-col items-center uppercase md:mb-3'>

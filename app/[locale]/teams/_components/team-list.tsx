@@ -28,7 +28,7 @@ export default async function TeamList() {
 					/>
 
 					<div className='absolute top-0 h-full w-full bg-fade opacity-100 transition-all sm:opacity-0 sm:group-hover:opacity-100' />
-					<div className='absolute bottom-0 h-full w-full bg-gradient-to-t from-30% from-milky-white to-50% to-transparent'>
+					<div className='absolute bottom-0 h-full w-full bg-linear-to-t from-30% from-milky-white to-50% to-transparent'>
 						<div className='relative h-full w-full'>
 							<div className='grid w-full grid-cols-2 gap-2 p-2 opacity-100 transition-all sm:opacity-0 sm:group-hover:opacity-100'>
 								{team.players.map(({ users: user }) => (
@@ -36,7 +36,7 @@ export default async function TeamList() {
 										key={user?.osu_id}
 										target='_blank'
 										href={`https://osu.ppy.sh/users/${user?.osu_id}`}
-										className='flex gap-2 focus:outline-none'
+										className='flex gap-2 focus:outline-hidden'
 									>
 										<Image
 											height={32}

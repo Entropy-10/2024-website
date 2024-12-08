@@ -21,7 +21,7 @@ export default async function Qualifiers() {
 			</div>
 
 			<div className='flex flex-row-reverse'>
-				<div className='h-[4px] w-[65%] bg-gradient-to-l from-light-blue via-salmon to-[#FDC094]' />
+				<div className='h-[4px] w-[65%] bg-linear-to-l from-light-blue via-salmon to-[#FDC094]' />
 			</div>
 
 			<div className='padding flex flex-wrap justify-center gap-5 py-8'>
@@ -33,7 +33,7 @@ export default async function Qualifiers() {
 			</div>
 
 			<div className='flex flex-row-reverse'>
-				<div className='h-[4px] w-[65%] bg-gradient-to-l from-light-blue via-salmon to-[#FDC094]' />
+				<div className='h-[4px] w-[65%] bg-linear-to-l from-light-blue via-salmon to-[#FDC094]' />
 			</div>
 
 			<div className='padding flex flex-wrap justify-center gap-5 py-8'>

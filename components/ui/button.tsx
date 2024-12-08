@@ -10,7 +10,7 @@ import type { VariantProps } from 'class-variance-authority'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 export const buttonVariants = cva(
-	'group relative flex select-none items-center justify-center font-black text-xs transition-all duration-200 ease-in-out focus:outline-none',
+	'group relative flex select-none items-center justify-center font-black text-xs transition-all duration-200 ease-in-out focus:outline-hidden',
 	{
 		variants: {
 			variant: {
@@ -101,7 +101,7 @@ function createInner({
 					)}
 				</span>
 			</div>
-			<div className='absolute z-10 size-full bg-gradient-to-r from-[#807EE1] to-[#D987A6] transition-all duration-200 ease-in-out group-hover:opacity-0' />
+			<div className='absolute z-10 size-full bg-linear-to-r from-[#807EE1] to-[#D987A6] transition-all duration-200 ease-in-out group-hover:opacity-0' />
 			<div className='absolute z-0 size-full bg-light-blue' />
 		</>
 	) : (
