@@ -41,7 +41,7 @@ export default function Footer() {
 					</p>
 
 					<div className='max-md:w-full max-md:max-w-lg'>
-						<nav className='flex select-none justify-between divide-x-2 font-medium text-xs'>
+						<nav className='flex select-none justify-between divide-x-2 divide-milky-white font-medium text-xs'>
 							{navItems.map((item, i) => (
 								<NavItem
 									key={item.text}
