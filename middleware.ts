@@ -1,4 +1,4 @@
-import csrf from 'edge-csrf'
+import { CsrfError, createCsrfProtect } from '@edge-csrf/nextjs'
 import createIntlMiddleware from 'next-intl/middleware'
 
 import { env } from '@env'
@@ -9,7 +9,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 
 const intlMiddleware = createIntlMiddleware(routing)
 
-const csrfProtect = csrf({
+const csrfProtect = createCsrfProtect({
 	cookie: {
 		secure: env.VERCEL_ENV === 'production'
 	}
@@ -17,9 +17,15 @@ const csrfProtect = csrf({
 
 export default async function middleware(request: NextRequest) {
 	const response = intlMiddleware(request)
-	const csrfError = await csrfProtect(request, response)
 
-	if (csrfError) return new NextResponse('Invalid CSRF token', { status: 403 })
+	try {
+		await csrfProtect(request, response)
+	} catch (error) {
+		if (error instanceof CsrfError) {
+			return new NextResponse('invalid csrf token', { status: 403 })
+		}
+		throw error
+	}
 
 	if (request.nextUrl.pathname === '/csrf-token') {
 		return NextResponse.json({
