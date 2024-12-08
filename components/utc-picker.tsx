@@ -62,7 +62,7 @@ const UtcPicker = forwardRef<HTMLButtonElement, UtcPickerProps>(
 							<Select.Item
 								key={utcOption}
 								value={utcOption}
-								className='flex h-[25px] cursor-pointer items-center pl-1 data-highlighted:bg-light-blue/10 data-[state=checked]:font-bold data-highlighted:text-light-blue data-[state=checked]:text-light-blue data-highlighted:outline-hidden'
+								className='flex h-[25px] cursor-pointer items-center pl-1 data-highlighted:bg-light-blue/10 data-[state=checked]:font-bold data-[state=checked]:text-light-blue data-highlighted:text-light-blue data-highlighted:outline-hidden'
 							>
 								<Select.ItemText>{utcOption}</Select.ItemText>
 							</Select.Item>
