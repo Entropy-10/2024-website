@@ -1,9 +1,9 @@
-import Loglib from '@loglib/tracker/react'
 import { genOgTwitterImage } from '@metadata'
 import { routing } from '@navigation'
 import { createClient } from '@supabase/server'
 import type { MetadataProps } from '@types'
 import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
@@ -77,8 +77,8 @@ export default async function LocaleLayout({
 					{tokenState?.old && <UpdateScopes />}
 					<main className='flex-1'>{children}</main>
 					<Footer />
+					<Analytics />
 				</NextIntlClientProvider>
-				<Loglib config={{ id: 'test-open' }} />
 			</body>
 		</html>
 	)
