@@ -1,5 +1,7 @@
+'use client'
+
 import type { MDXProvider } from '@mdx-js/react'
-import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc'
+import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 const components = {
 	h1: props => (
@@ -30,11 +32,6 @@ const components = {
 	)
 } satisfies React.ComponentProps<typeof MDXProvider>['components']
 
-export function CustomMDX(props: MDXRemoteProps) {
-	return (
-		<MDXRemote
-			{...props}
-			components={{ ...components, ...(props.components || {}) }}
-		/>
-	)
+export default function CustomMDX(props: MDXRemoteSerializeResult) {
+	return <MDXRemote {...props} components={components} />
 }
