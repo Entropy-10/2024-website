@@ -1,7 +1,7 @@
 import { createMetadata } from '@metadata'
 import { createClient } from '@supabase/server'
 import { Loader2 } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { Suspense } from 'react'
 
 import Background from '~/components/ui/background'
@@ -9,12 +9,8 @@ import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
 import TeamList from './_components/team-list'
 
-import type { MetadataProps } from '@types'
-
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({

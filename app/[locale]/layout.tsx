@@ -1,12 +1,11 @@
 import { genOgTwitterImage } from '@metadata'
 import { routing } from '@navigation'
 import { createClient } from '@supabase/server'
-import type { MetadataProps } from '@types'
 import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
@@ -16,9 +15,8 @@ import Header from './_components/header'
 import PreviewWarning from './_components/preview-warning'
 import UpdateScopes from './_components/update-scopes'
 
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	const csrfToken = (await headers()).get('X-CSRF-Token') || 'missing'
@@ -44,14 +42,10 @@ export async function generateMetadata(props: MetadataProps) {
 
 interface LocaleLayoutProps {
 	children: ReactNode
-	params: Promise<{ locale: string }>
 }
 
-export default async function LocaleLayout({
-	children,
-	params
-}: LocaleLayoutProps) {
-	const { locale } = await params
+export default async function LocaleLayout({ children }: LocaleLayoutProps) {
+	const locale = await getLocale()
 	if (!routing.locales.includes(locale)) {
 		notFound()
 	}

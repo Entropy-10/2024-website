@@ -1,19 +1,15 @@
 import { createMetadata } from '@metadata'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import Background from '~/components/ui/background'
 import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
-
-import type { MetadataProps } from '@types'
 import CustomMDX from './_components/custom-mdx'
 import MappoolTable from './_components/mappool-table'
 
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({

@@ -1,17 +1,14 @@
 import { createMetadata } from '@metadata'
-import { getMessages, getTranslations } from 'next-intl/server'
-
-import type { MetadataProps } from '@types'
 import { pick } from 'lodash'
 import { NextIntlClientProvider } from 'next-intl'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import Background from '~/components/ui/background'
 import HeaderDivider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
 import MappoolContainer from './_components/mappool-container'
 
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({

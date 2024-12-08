@@ -3,13 +3,13 @@
 import { Link, usePathname } from '@navigation'
 import { localesMetadata } from '@siteConfig'
 import { cn } from '@utils/client'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import ChevronDown from '~/components/icons/chevron-down'
 import RadialProgress from '~/components/radial-progress'
 import * as Dropdown from '~/components/ui/dropdown'
 
 interface LanguagePickerProps {
-	locale: string
 	progress:
 		| {
 				code: string
@@ -18,11 +18,9 @@ interface LanguagePickerProps {
 		| null
 }
 
-export default function LanguagePicker({
-	locale,
-	progress
-}: LanguagePickerProps) {
+export default function LanguagePicker({ progress }: LanguagePickerProps) {
 	const pathname = usePathname()
+	const locale = useLocale()
 
 	return (
 		<Dropdown.Root>

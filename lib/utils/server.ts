@@ -1,6 +1,5 @@
 import type { NamespaceKeys, NestedKeyOf } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
+import { getLocale, getTranslations } from 'next-intl/server'
 import 'server-only'
 
 export async function getServerTranslations<
@@ -9,6 +8,6 @@ export async function getServerTranslations<
 		NestedKeyOf<IntlMessages>
 	> = never
 >(namespace?: NestedKey) {
-	const locale = (await cookies()).get('NEXT_LOCALE')?.value ?? 'en'
+	const locale = await getLocale()
 	return await getTranslations({ locale, namespace })
 }

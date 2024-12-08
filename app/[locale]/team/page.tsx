@@ -1,28 +1,24 @@
 import { createMetadata } from '@metadata'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getMessages, getTranslations } from 'next-intl/server'
-import { cookies, headers } from 'next/headers'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
+import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { Suspense } from 'react'
 
+import { NextIntlClientProvider } from 'next-intl'
 import MessageBox from '~/components/message-box'
 import SectionLoader from '~/components/section-loader'
 import Background from '~/components/ui/background'
 import Button from '~/components/ui/button'
 import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'
+import Editor from './_components/editor'
 import Invites from './_components/invites'
 import Players from './_components/players'
 
-import type { MetadataProps } from '@types'
-import { NextIntlClientProvider } from 'next-intl'
-import Editor from './_components/editor'
-
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
@@ -34,7 +30,7 @@ export async function generateMetadata(props: MetadataProps) {
 
 export default async function TeamPage() {
 	const session = await getSession()
-	const locale = (await cookies()).get('NEXT_LOCALE')?.value ?? 'en'
+	const locale = await getLocale()
 	const csrfToken = (await headers()).get('X-CSRF-Token') ?? 'missing'
 	if (!session) redirect('/unauthorized')
 

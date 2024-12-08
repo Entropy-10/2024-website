@@ -9,10 +9,6 @@ export interface ViewTransition {
 	updateCallbackDone: boolean
 }
 
-export interface MetadataProps {
-	params: Promise<{ locale: string }>
-}
-
 export interface UptimeStatusPage {
 	id: string
 	type: 'status_page'

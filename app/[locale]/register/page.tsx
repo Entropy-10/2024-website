@@ -1,19 +1,16 @@
 import { createMetadata } from '@metadata'
 import { getSession } from '@session'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 
 import Background from '~/components/ui/background'
 
 import { env } from '@env'
-import type { MetadataProps } from '@types'
 import { isProd } from '@utils/client'
 import MessageBox from '~/components/message-box'
 
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({

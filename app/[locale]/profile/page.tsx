@@ -1,8 +1,7 @@
 import { createMetadata } from '@metadata'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import type { MetadataProps } from '@types'
-import { getTranslations } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import { notFound, redirect } from 'next/navigation'
 import { Suspense } from 'react'
@@ -15,9 +14,8 @@ import AvatarInfo from './_components/avatar-info'
 import Invites from './_components/invites'
 import Team from './_components/team'
 
-export async function generateMetadata(props: MetadataProps) {
-	const params = await props.params
-	const { locale } = params
+export async function generateMetadata() {
+	const locale = await getLocale()
 
 	const t = await getTranslations({ locale, namespace: 'Metadata' })
 	return createMetadata({
