@@ -30,6 +30,7 @@ export default function Home() {
 										src={whiteLogo}
 										alt='white logo'
 										className='size-auto select-none'
+										priority
 									/>
 									<span className='tracking-[1rem] lg:tracking-[1.5rem]'>
 										PEN
