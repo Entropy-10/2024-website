@@ -2,7 +2,6 @@ import { createMetadata } from '@metadata'
 import { createClient } from '@supabase/server'
 import { Loader2 } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
 import { Suspense } from 'react'
 
 import Background from '~/components/ui/background'
@@ -27,7 +26,7 @@ export async function generateMetadata(props: MetadataProps) {
 
 export default async function TeamsPage() {
 	const t = await getTranslations('TeamsPage')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { count } = await supabase
 		.from('teams')
 		.select('*', { count: 'exact', head: true })

@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/server'
-import { cookies } from 'next/headers'
 
 import { getTranslations } from 'next-intl/server'
 import {
@@ -18,7 +17,7 @@ interface InvitesProps {
 
 export default async function Invites({ teamId, isCaptain }: InvitesProps) {
 	const t = await getTranslations('TeamPage.Invites')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { data: invites, error } = await supabase
 		.from('invites')
 		.select('*, users(osu_avatar, osu_name, rank, discord_tag)')

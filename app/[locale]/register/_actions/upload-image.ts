@@ -2,7 +2,6 @@
 
 import { env } from '@env'
 import { createClient } from '@supabase/server'
-import { cookies } from 'next/headers'
 import sharp from 'sharp'
 
 export async function uploadImage(formData: FormData) {
@@ -28,7 +27,7 @@ export async function uploadImage(formData: FormData) {
 			info: { format }
 		} = await sharpImage.toBuffer({ resolveWithObject: true })
 
-		const supabase = createClient(await cookies())
+		const supabase = await createClient()
 		const { data, error } = await supabase.storage
 			.from('flags')
 			.upload(

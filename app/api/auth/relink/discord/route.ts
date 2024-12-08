@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 
 	if (!session) return NextResponse.redirect(`${getBaseUrl()}/unauthorized`)
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	try {
 		const tokens = await discordAuth.tokenRequest({

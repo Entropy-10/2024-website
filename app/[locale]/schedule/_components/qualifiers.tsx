@@ -1,9 +1,8 @@
 import { createClient } from '@supabase/server'
-import { cookies } from 'next/headers'
 import Lobby from './lobby'
 
 export default async function Qualifiers() {
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: lobbies } = await supabase
 		.from('lobbies')

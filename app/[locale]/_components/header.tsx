@@ -2,7 +2,6 @@ import { getSession } from '@session'
 import { navItems } from '@siteConfig'
 import { createClient } from '@supabase/server'
 import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
 
 import { Link } from '@navigation'
 import { Suspense } from 'react'
@@ -16,7 +15,7 @@ import UserDropdown from './user-dropdown'
 export default async function Header() {
 	const t = await getTranslations('NavItems')
 	const session = await getSession()
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	let inviteCount: number | null = null
 
 	if (session) {

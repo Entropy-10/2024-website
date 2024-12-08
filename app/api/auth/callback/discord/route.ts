@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
 	if (!osuTokens) return authError(url)
 
 	const osuClient = new Client(osuTokens.access_token)
-	const supabase = createClient(await cookies(), env.SUPABASE_SERVICE_KEY)
+	const supabase = await createClient(env.SUPABASE_SERVICE_KEY)
 
 	try {
 		const discordUser = await discordAuth.getUser(tokens.access_token)

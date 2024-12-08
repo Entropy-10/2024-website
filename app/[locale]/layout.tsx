@@ -7,7 +7,7 @@ import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
-import { cookies, headers } from 'next/headers'
+import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import '~/styles/globals.css'
@@ -57,7 +57,7 @@ export default async function LocaleLayout({
 	}
 	const messages = await getMessages()
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { data: tokenState } = await supabase
 		.from('tokens')
 		.select('old')

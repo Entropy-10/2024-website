@@ -5,7 +5,6 @@ import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
 import { revalidatePath } from 'next/cache'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { Client, isOsuJSError } from 'osu-web.js'
 
@@ -18,7 +17,7 @@ export async function update(formData: FormData) {
 	if (!session) return updateError(t)
 
 	try {
-		const supabase = createClient(await cookies())
+		const supabase = await createClient()
 		const { data: tokens } = await supabase
 			.from('tokens')
 			.select()

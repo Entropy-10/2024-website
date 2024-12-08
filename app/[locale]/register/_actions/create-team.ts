@@ -4,7 +4,6 @@ import { createTeamAction } from '@schemas'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function createTeam(
@@ -31,7 +30,7 @@ export async function createTeam(
 
 	try {
 		const teamData = createTeamAction.parse(JSON.parse(formTeamData))
-		const supabase = createClient(await cookies())
+		const supabase = await createClient()
 
 		const { data: player } = await supabase
 			.from('players')

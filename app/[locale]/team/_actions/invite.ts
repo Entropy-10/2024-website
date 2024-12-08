@@ -4,7 +4,6 @@ import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
 import { revalidatePath } from 'next/cache'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function invite(formData: FormData) {
@@ -23,7 +22,7 @@ export async function invite(formData: FormData) {
 
 	if (!teamId || !userId) return
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: player } = await supabase
 		.from('players')

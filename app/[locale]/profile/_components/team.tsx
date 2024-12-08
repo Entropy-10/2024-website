@@ -1,7 +1,6 @@
 import { createClient } from '@supabase/server'
 import dayjs from 'dayjs'
 import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
 import Image from 'next/image'
 
 import Button from '~/components/ui/button'
@@ -12,7 +11,7 @@ interface TeamProps {
 
 export default async function Team({ userId }: TeamProps) {
 	const t = await getTranslations('ProfilePage.Team')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { data } = await supabase
 		.from('players')
 		.select('joined_at, teams(*)')

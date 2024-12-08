@@ -41,7 +41,7 @@ export default async function TeamPage() {
 	const messages = await getMessages()
 	const t = await getTranslations('TeamPage')
 	const buttonT = await getTranslations('Buttons')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data } = await supabase
 		.from('players')

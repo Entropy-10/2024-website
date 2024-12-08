@@ -4,7 +4,6 @@ import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
 import { revalidatePath } from 'next/cache'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function acceptInvite(formData: FormData) {
@@ -16,7 +15,7 @@ export async function acceptInvite(formData: FormData) {
 	const t = await getServerTranslations('ProfilePage.Errors')
 
 	try {
-		const supabase = createClient(await cookies())
+		const supabase = await createClient()
 		const { error: teamError } = await supabase.from('players').insert({
 			team_id: Number.parseInt(teamId),
 			user_id: session.sub,

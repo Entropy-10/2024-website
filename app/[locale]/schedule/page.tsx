@@ -4,7 +4,6 @@ import { getTranslations } from 'next-intl/server'
 import { createClient } from '@supabase/server'
 import type { MetadataProps } from '@types'
 import { cn } from '@utils/client'
-import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Background from '~/components/ui/background'
 import Divider from '~/components/ui/divider'
@@ -27,7 +26,7 @@ export async function generateMetadata(props: MetadataProps) {
 export default async function SchedulePage() {
 	const t = await getTranslations('SchedulePage')
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { data: matches } = await supabase
 		.from('matches')
 		.select(

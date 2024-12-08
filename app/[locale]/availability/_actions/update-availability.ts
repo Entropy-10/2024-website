@@ -3,7 +3,6 @@
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import type { Availability } from '@types'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function updateAvailability(formData: FormData) {
@@ -13,7 +12,7 @@ export async function updateAvailability(formData: FormData) {
 	const availability = JSON.parse(
 		String(formData.get('availability'))
 	) as Availability
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: player, error: playerError } = await supabase
 		.from('players')

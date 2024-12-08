@@ -2,7 +2,6 @@
 
 import { env } from '@env'
 import { createClient } from '@supabase/server'
-import { cookies } from 'next/headers'
 import sharp from 'sharp'
 
 export default async function uploadImage(formData: FormData) {
@@ -29,7 +28,7 @@ export default async function uploadImage(formData: FormData) {
 			info: { format }
 		} = await sharpImage.toBuffer({ resolveWithObject: true })
 
-		const supabase = createClient(await cookies())
+		const supabase = await createClient()
 		const { error: deleteError } = await supabase.storage
 			.from('flags')
 			.remove([oldFlagPath])

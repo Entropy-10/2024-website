@@ -14,7 +14,7 @@ export async function deleteAccount(csrfToken: string) {
 
 	if (!session) return deleteAccountError(t)
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: player, error: playerError } = await supabase
 		.from('players')

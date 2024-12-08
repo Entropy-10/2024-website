@@ -5,7 +5,6 @@ import { env } from '@env'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function verify() {
@@ -13,7 +12,7 @@ export async function verify() {
 	if (!session) redirect('/unauthorized')
 
 	const t = await getServerTranslations('VerifyPage.Errors')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: user, error } = await supabase
 		.from('users')

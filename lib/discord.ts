@@ -5,7 +5,6 @@ import { env } from '@env'
 import { createClient } from '@supabase/server'
 import { Routes } from 'discord-api-types/v10'
 import Auth, { DiscordHTTPError } from 'discord-oauth2'
-import { cookies } from 'next/headers'
 
 import type {
 	APIMessage,
@@ -39,7 +38,7 @@ export async function refreshDiscordToken(tokens: Tables<'tokens'>) {
 		scope: 'identify guilds.members.read'
 	})
 
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 	const { error } = await supabase
 		.from('tokens')
 		.update({

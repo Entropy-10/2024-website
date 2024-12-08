@@ -3,7 +3,6 @@
 import { createClient } from '@supabase/server'
 import { getFlagPathFromUrl } from '@utils/client'
 import { getServerTranslations } from '@utils/server'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function deleteTeam(formData: FormData) {
@@ -13,9 +12,9 @@ export async function deleteTeam(formData: FormData) {
 	if (!teamId || !teamFlag || !userId) return
 
 	const t = await getServerTranslations('TeamPage.Errors')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
-	const { count, data } = await supabase
+	const { count } = await supabase
 		.from('players')
 		.select('*', { count: 'exact' })
 		.eq('team_id', teamId)

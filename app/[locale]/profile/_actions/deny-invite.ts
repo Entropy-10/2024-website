@@ -3,7 +3,6 @@
 import { createClient } from '@supabase/server'
 import { getServerTranslations } from '@utils/server'
 import { revalidatePath } from 'next/cache'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export async function denyInvite(formData: FormData) {
@@ -11,7 +10,7 @@ export async function denyInvite(formData: FormData) {
 	if (!inviteId) return
 
 	const t = await getServerTranslations('ProfilePage.Errors')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { error } = await supabase
 		.from('invites')

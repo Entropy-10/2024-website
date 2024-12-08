@@ -3,7 +3,6 @@ import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import type { MetadataProps } from '@types'
 import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
 import Image from 'next/image'
 import { notFound, redirect } from 'next/navigation'
 import { Suspense } from 'react'
@@ -34,7 +33,7 @@ export default async function ProfilePage() {
 
 	const t = await getTranslations('ProfilePage')
 	const buttonT = await getTranslations('Buttons')
-	const supabase = createClient(await cookies())
+	const supabase = await createClient()
 
 	const { data: user } = await supabase
 		.from('users')
