@@ -40,7 +40,7 @@ export const links = {
 	socials: {
 		twitch: 'https://www.twitch.tv/test_open',
 		youtube: 'https://www.youtube.com/@TEST_Open',
-		x: 'https://twitter.com/TESTOpen_lazer',
+		x: 'https://twitter.com/TESTOpenOsu',
 		discord: 'https://discord.com/invite/nZnQZMvEhq'
 	},
 	hosts: {
