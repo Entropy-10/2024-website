@@ -35,7 +35,7 @@ export async function acceptInvite(formData: FormData) {
 		const { error: inviteError } = await supabase
 			.from('invites')
 			.update({ status: 'accepted' })
-			.eq('id', inviteId)
+			.eq('id', Number(inviteId))
 
 		if (inviteError) throw inviteError
 	} catch (err) {

@@ -15,7 +15,7 @@ export async function denyInvite(formData: FormData) {
 	const { error } = await supabase
 		.from('invites')
 		.update({ status: 'denied' })
-		.eq('id', inviteId)
+		.eq('id', Number(inviteId))
 
 	if (error) {
 		redirect(

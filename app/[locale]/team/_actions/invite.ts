@@ -27,7 +27,7 @@ export async function invite(formData: FormData) {
 	const { data: player } = await supabase
 		.from('players')
 		.select()
-		.eq('team_id', teamId)
+		.eq('team_id', Number(teamId))
 		.eq('user_id', userId)
 		.maybeSingle()
 

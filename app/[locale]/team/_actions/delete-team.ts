@@ -17,7 +17,7 @@ export async function deleteTeam(formData: FormData) {
 	const { count } = await supabase
 		.from('players')
 		.select('*', { count: 'exact' })
-		.eq('team_id', teamId)
+		.eq('team_id', Number(teamId))
 		.neq('user_id', userId)
 
 	if (count && count > 0) {
@@ -31,7 +31,7 @@ export async function deleteTeam(formData: FormData) {
 	const { error: teamError } = await supabase
 		.from('teams')
 		.delete()
-		.eq('id', teamId)
+		.eq('id', Number(teamId))
 
 	const flagInfo = getFlagPathFromUrl(teamFlag)
 	if (flagInfo) {
