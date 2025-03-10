@@ -1,3 +1,4 @@
+import { env } from '@env'
 import { genOgTwitterImage } from '@metadata'
 import { routing } from '@navigation'
 import { createClient } from '@supabase/server'
@@ -8,7 +9,9 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import type { ReactNode } from 'react'
+import { Monitoring } from 'react-scan/monitoring/next'
 import '~/styles/globals.css'
 import Footer from './_components/footer'
 import Header from './_components/header'
@@ -59,12 +62,25 @@ export default async function LocaleLayout({ children }: LocaleLayoutProps) {
 
 	return (
 		<html lang={locale} className='scroll-smooth!'>
+			<head>
+				<Script
+					src='https://unpkg.com/react-scan/dist/install-hook.global.js'
+					strategy='beforeInteractive'
+				/>
+			</head>
+
 			<body
 				className={cn(
 					'flex min-h-screen flex-col overflow-x-hidden',
 					inter.className
 				)}
 			>
+				<Monitoring
+					apiKey={env.REACT_SCAN_API_KEY}
+					url='https://monitoring.react-scan.com/api/v1/ingest'
+					commit={env.VERCEL_GIT_COMMIT_SHA}
+					branch={env.VERCEL_GIT_COMMIT_REF}
+				/>
 				<NextIntlClientProvider messages={messages}>
 					<Header />
 					{isPreview && <PreviewWarning />}
