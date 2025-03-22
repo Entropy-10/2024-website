@@ -15,7 +15,7 @@ import X from '~/components/icons/x'
 import Youtube from '~/components/icons/youtube'
 import Button from '~/components/ui/button'
 import NavItem from '~/components/ui/nav-item'
-import whiteLogo from '~/public/images/logo-white.png'
+import whiteLogo from '../../../../public/images/logo-white.png'
 import Status from './status'
 
 export default function Footer() {

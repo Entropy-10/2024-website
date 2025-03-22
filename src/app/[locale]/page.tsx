@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import Background from '~/components/ui/background'
 import Button from '~/components/ui/button'
-import whiteLogo from '~/public/images/logo-white.png'
+import whiteLogo from '../../../public/images/logo-white.png'
 import Features from './_components/features'
 import Sponsor from './_components/sponsor'
 

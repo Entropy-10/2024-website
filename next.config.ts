@@ -4,7 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin'
 import ReactComponentName from 'react-scan/react-component-name/webpack'
 
 const jiti = createJiti(fileURLToPath(import.meta.url))
-jiti.esmResolve('./env')
+jiti.esmResolve('./src/env')
 
 const withNextIntl = createNextIntlPlugin()
 
