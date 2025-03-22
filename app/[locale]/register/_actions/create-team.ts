@@ -3,14 +3,14 @@
 import { createTeamAction } from '@schemas'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 
 export async function createTeam(
 	formData: FormData
 ): Promise<{ error: CreateTeamError | null }> {
 	const session = await getSession()
-	const t = await getServerTranslations('RegistrationPage.Errors')
+	const t = await getTranslations('RegistrationPage.Errors')
 
 	if (!session) redirect('/unauthorized')
 

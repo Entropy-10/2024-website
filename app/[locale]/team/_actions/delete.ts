@@ -1,7 +1,7 @@
 'use server'
 
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { z } from 'zod'
@@ -15,7 +15,7 @@ export async function deleteItem(formData: FormData) {
 
 	const type = parsedType.data
 	const supabase = await createClient()
-	const t = await getServerTranslations('TeamPage.Errors')
+	const t = await getTranslations('TeamPage.Errors')
 
 	const { error } = await supabase
 		.from(`${type}s`)

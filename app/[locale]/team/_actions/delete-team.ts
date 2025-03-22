@@ -2,7 +2,7 @@
 
 import { createClient } from '@supabase/server'
 import { getFlagPathFromUrl } from '@utils/client'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 
 export async function deleteTeam(formData: FormData) {
@@ -11,7 +11,7 @@ export async function deleteTeam(formData: FormData) {
 	const userId = formData.get('user_id')?.toString()
 	if (!teamId || !teamFlag || !userId) return
 
-	const t = await getServerTranslations('TeamPage.Errors')
+	const t = await getTranslations('TeamPage.Errors')
 	const supabase = await createClient()
 
 	const { count } = await supabase

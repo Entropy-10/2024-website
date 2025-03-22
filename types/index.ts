@@ -1,3 +1,5 @@
+import type { Messages } from 'next-intl'
+
 // @ts-ignore
 export interface ExtendedDocument extends Document {
 	startViewTransition?: (callback: () => Promise<void> | void) => ViewTransition
@@ -50,7 +52,7 @@ export enum StatusColor {
 
 export type NavItems = {
 	link: string
-	text: keyof IntlMessages['NavItems']
+	text: keyof Messages['NavItems']
 }[]
 
 export interface CountdownTime {
@@ -61,7 +63,7 @@ export interface CountdownTime {
 }
 
 export interface Feature {
-	name: keyof IntlMessages['HomePage']['Features']['Titles']
+	name: keyof Messages['HomePage']['Features']['Titles']
 	link: string
 	className?: string
 }

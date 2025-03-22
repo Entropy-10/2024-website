@@ -3,7 +3,7 @@
 import { osuAuth } from '@osu'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { Client, isOsuJSError } from 'osu-web.js'
@@ -12,7 +12,7 @@ import type { StatisticsRulesets, UserExtended } from 'osu-web.js'
 
 export async function update(formData: FormData) {
 	const session = await getSession()
-	const t = await getServerTranslations('ProfilePage.Errors')
+	const t = await getTranslations('ProfilePage.Errors')
 
 	if (!session) return updateError(t)
 
@@ -77,7 +77,7 @@ export async function update(formData: FormData) {
 	}
 }
 
-function updateError(t: Awaited<ReturnType<typeof getServerTranslations>>) {
+function updateError(t: Awaited<ReturnType<typeof getTranslations>>) {
 	return redirect(
 		`/profile?title=${t('FailedUpdate.title')}&message=${t(
 			'FailedUpdate.message'

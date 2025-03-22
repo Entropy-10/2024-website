@@ -5,8 +5,8 @@ import { createClient } from '@supabase/server'
 import { cn, getBaseUrl, inter, isPreview } from '@utils/client'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import { NextIntlClientProvider } from 'next-intl'
-import { getLocale, getMessages, getTranslations } from 'next-intl/server'
+import { NextIntlClientProvider, hasLocale } from 'next-intl'
+import { getLocale, getTranslations } from 'next-intl/server'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
@@ -49,10 +49,7 @@ interface LocaleLayoutProps {
 
 export default async function LocaleLayout({ children }: LocaleLayoutProps) {
 	const locale = await getLocale()
-	if (!routing.locales.includes(locale)) {
-		notFound()
-	}
-	const messages = await getMessages()
+	if (!hasLocale(routing.locales, locale)) notFound()
 
 	const supabase = await createClient()
 	const { data: tokenState } = await supabase
@@ -81,7 +78,7 @@ export default async function LocaleLayout({ children }: LocaleLayoutProps) {
 					commit={env.VERCEL_GIT_COMMIT_SHA}
 					branch={env.VERCEL_GIT_COMMIT_REF}
 				/>
-				<NextIntlClientProvider messages={messages}>
+				<NextIntlClientProvider>
 					<Header />
 					{isPreview && <PreviewWarning />}
 					{tokenState?.old && <UpdateScopes />}

@@ -4,14 +4,14 @@ import { getGuildMember, sendMessage, updateGuildMember } from '@discord'
 import { env } from '@env'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 
 export async function verify() {
 	const session = await getSession()
 	if (!session) redirect('/unauthorized')
 
-	const t = await getServerTranslations('VerifyPage.Errors')
+	const t = await getTranslations('VerifyPage.Errors')
 	const supabase = await createClient()
 
 	const { data: user, error } = await supabase
@@ -55,6 +55,6 @@ export async function verify() {
 	redirect('/verify?status=success')
 }
 
-function verifyError(t: Awaited<ReturnType<typeof getServerTranslations>>) {
+function verifyError(t: Awaited<ReturnType<typeof getTranslations>>) {
 	return redirect(`/verify?status=error&message=${t('verificationFailed')}`)
 }

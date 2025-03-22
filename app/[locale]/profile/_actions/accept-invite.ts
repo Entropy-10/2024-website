@@ -2,7 +2,7 @@
 
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -12,7 +12,7 @@ export async function acceptInvite(formData: FormData) {
 	const session = await getSession()
 	if (!inviteId || !teamId || !session) return
 
-	const t = await getServerTranslations('ProfilePage.Errors')
+	const t = await getTranslations('ProfilePage.Errors')
 
 	try {
 		const supabase = await createClient()

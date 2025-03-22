@@ -3,14 +3,14 @@
 import { discordAuth } from '@discord'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { Client } from 'osu-web.js'
 
 export async function deleteAccount(csrfToken: string) {
 	const session = await getSession()
-	const t = await getServerTranslations('ProfilePage.Errors')
+	const t = await getTranslations('ProfilePage.Errors')
 
 	if (!session) return deleteAccountError(t)
 
@@ -62,9 +62,7 @@ export async function deleteAccount(csrfToken: string) {
 	redirect('/')
 }
 
-function deleteAccountError(
-	t: Awaited<ReturnType<typeof getServerTranslations>>
-) {
+function deleteAccountError(t: Awaited<ReturnType<typeof getTranslations>>) {
 	return {
 		error: {
 			title: t('FailedAccountDelete.title'),

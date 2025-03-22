@@ -2,7 +2,7 @@
 
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getServerTranslations } from '@utils/server'
+import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -10,7 +10,7 @@ export async function invite(formData: FormData) {
 	const teamId = formData.get('team_id')?.toString()
 	const userId = formData.get('user_id')?.toString()
 	const session = await getSession()
-	const t = await getServerTranslations('TeamPage.Errors')
+	const t = await getTranslations('TeamPage.Errors')
 
 	if (session?.sub === userId) {
 		redirect(
