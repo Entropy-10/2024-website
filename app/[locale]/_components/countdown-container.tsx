@@ -1,7 +1,7 @@
 'use client'
 
 import { pad } from '@utils/client'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import Confetti from 'react-confetti-boom'

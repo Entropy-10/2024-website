@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import useSizeQuery from '~/hooks/use-size-query'
 import Song from './song'

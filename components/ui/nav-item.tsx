@@ -2,7 +2,7 @@
 
 import { usePathname } from '@navigation'
 import { cn } from '@utils/client'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Link from 'next/link'
 import { forwardRef } from 'react'
 

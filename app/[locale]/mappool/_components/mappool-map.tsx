@@ -1,8 +1,8 @@
 'use client'
 
 import { cn } from '@utils/client'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Music, Star, Timer } from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { buildUrl } from 'osu-web.js'
 import { useState } from 'react'
