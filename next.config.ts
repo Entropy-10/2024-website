@@ -14,6 +14,7 @@ export default withNextIntl({
 		serverActions: { bodySizeLimit: '5mb' },
 		reactCompiler: true
 	},
+	transpilePackages: ['next-mdx-remote'],
 	pageExtensions: ['mdx', 'ts', 'tsx'],
 	images: {
 		remotePatterns: [
