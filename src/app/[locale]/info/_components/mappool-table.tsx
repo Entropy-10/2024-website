@@ -1,5 +1,6 @@
-import { cn } from '@utils/client'
 import { useTranslations } from 'next-intl'
+
+import { cn } from '@utils/client'
 
 interface MappoolTableProps {
 	className?: string

@@ -1,6 +1,6 @@
-import { cn } from '@utils/client'
-
 import type { SVGProps } from 'react'
+
+import { cn } from '@utils/client'
 
 interface StatusIconProps extends SVGProps<SVGSVGElement> {
 	className?: string

@@ -1,11 +1,11 @@
-import { CsrfError, createCsrfProtect } from '@edge-csrf/nextjs'
+import { type NextRequest, NextResponse } from 'next/server'
 import createIntlMiddleware from 'next-intl/middleware'
+import { CsrfError, createCsrfProtect } from '@edge-csrf/nextjs'
 
 import { env } from '@env'
 import { routing } from '@navigation'
 import { decrypt, encrypt } from '@session'
 import { isProd } from '@utils/client'
-import { type NextRequest, NextResponse } from 'next/server'
 
 const intlMiddleware = createIntlMiddleware(routing)
 

@@ -1,5 +1,6 @@
-import { cn } from '@utils/client'
 import type { SVGProps } from 'react'
+
+import { cn } from '@utils/client'
 
 interface OsuIconProps extends SVGProps<SVGSVGElement> {
 	className?: string

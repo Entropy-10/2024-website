@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/server'
+
 import Lobby from './lobby'
 
 export default async function Qualifiers() {

@@ -1,8 +1,10 @@
+import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
+import { Menu } from 'lucide-react'
+
 import { navItems } from '@siteConfig'
 import type { Session } from '@types'
-import { Menu } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
-import Image from 'next/image'
+
 import SignInButton from '~/components/sign-in-button'
 import SignOutButton from '~/components/sign-out-button'
 import * as Dropdown from '~/components/ui/dropdown'

@@ -1,15 +1,15 @@
 'use client'
 
-import { pad } from '@utils/client'
-import { AnimatePresence, motion } from 'motion/react'
-import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { AnimatePresence, motion } from 'motion/react'
 import Confetti from 'react-confetti-boom'
 
-import Countdown from './countdown'
-
 import { env } from '@env'
+import { pad } from '@utils/client'
 import type { CountdownTime } from '@types'
+
+import Countdown from './countdown'
 
 const start = Number(env.NEXT_PUBLIC_START_DATE)
 const hour = 1000 * 60 * 60

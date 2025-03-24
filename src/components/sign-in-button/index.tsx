@@ -1,6 +1,7 @@
-import type { VariantProps } from 'class-variance-authority'
-import { useTranslations } from 'next-intl'
 import { headers } from 'next/headers'
+import { useTranslations } from 'next-intl'
+import type { VariantProps } from 'class-variance-authority'
+
 import Button, { type buttonVariants } from '../ui/button'
 import { signIn } from './actions'
 

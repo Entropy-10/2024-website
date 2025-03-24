@@ -1,6 +1,7 @@
-import { createClient } from '@supabase/server'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { createClient } from '@supabase/server'
 
 export default async function TeamList() {
 	const supabase = await createClient()

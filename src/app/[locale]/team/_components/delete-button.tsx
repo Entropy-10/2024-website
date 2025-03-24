@@ -1,8 +1,9 @@
 'use client'
 
-import { cn } from '@utils/client'
 import type { VariantProps } from 'class-variance-authority'
 import { useFormStatus } from 'react-dom'
+
+import { cn } from '@utils/client'
 
 import Button, { type buttonVariants } from '~/components/ui/button'
 

@@ -1,14 +1,14 @@
 'use server'
 
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+import type { StatisticsRulesets, UserExtended } from 'osu-web.js'
+import { Client, isOsuJSError } from 'osu-web.js'
+
 import { osuAuth } from '@osu'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
-import { Client, isOsuJSError } from 'osu-web.js'
-
-import type { StatisticsRulesets, UserExtended } from 'osu-web.js'
 
 export async function update(formData: FormData) {
 	const session = await getSession()

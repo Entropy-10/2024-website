@@ -1,17 +1,17 @@
-import { cn } from '@utils/client'
+import { headers } from 'next/headers'
 import Image from 'next/image'
-
-import Button from '~/components/ui/button'
-import { relink } from '../_actions/relink'
-import { update } from '../_actions/update'
-import UpdateButton from './update-button'
-
-import pick from 'lodash/pick'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
-import { headers } from 'next/headers'
+import pick from 'lodash/pick'
+
+import { cn } from '@utils/client'
+
+import Button from '~/components/ui/button'
 import type { Tables } from '~/types/supabase'
+import { relink } from '../_actions/relink'
+import { update } from '../_actions/update'
 import Options from './options'
+import UpdateButton from './update-button'
 
 interface AvatarInfoProps {
 	user: Tables<'users'>

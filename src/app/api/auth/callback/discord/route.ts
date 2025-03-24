@@ -1,17 +1,17 @@
-import { discordAuth } from '@discord'
-import { env } from '@env'
-import { createClient } from '@supabase/server'
 import { cookies } from 'next/headers'
+import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
+import { getTranslations } from 'next-intl/server'
+import type { Token } from 'osu-web.js'
 import { Client } from 'osu-web.js'
 
-import { authError, getDiscordAvatarUrl } from '../../utils'
-
+import { discordAuth } from '@discord'
+import { env } from '@env'
 import { decrypt, encrypt } from '@session'
+import { createClient } from '@supabase/server'
 import { isProd } from '@utils/client'
-import { getTranslations } from 'next-intl/server'
-import type { NextRequest } from 'next/server'
-import type { Token } from 'osu-web.js'
+
+import { authError, getDiscordAvatarUrl } from '../../utils'
 
 export async function GET(request: NextRequest) {
 	const searchParams = request.nextUrl.searchParams

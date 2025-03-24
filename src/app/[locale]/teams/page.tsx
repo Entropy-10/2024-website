@@ -1,8 +1,9 @@
+import { Suspense } from 'react'
+import { getLocale, getTranslations } from 'next-intl/server'
+import { Loader2 } from 'lucide-react'
+
 import { createMetadata } from '@metadata'
 import { createClient } from '@supabase/server'
-import { Loader2 } from 'lucide-react'
-import { getLocale, getTranslations } from 'next-intl/server'
-import { Suspense } from 'react'
 
 import Background from '~/components/ui/background'
 import Divider from '~/components/ui/divider'

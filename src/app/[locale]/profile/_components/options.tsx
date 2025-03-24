@@ -1,9 +1,11 @@
 'use client'
 
-import type { ModalError } from '@types'
-import { MoreVertical } from 'lucide-react'
-import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { MoreVertical } from 'lucide-react'
+
+import type { ModalError } from '@types'
+
 import TextModal from '~/components/text-modal'
 import Button from '~/components/ui/button'
 import * as Dropdown from '~/components/ui/dropdown'

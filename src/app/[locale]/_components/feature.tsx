@@ -1,12 +1,12 @@
-import { cn } from '@utils/client'
 import { useTranslations } from 'next-intl'
+
+import { Link } from '@navigation'
+import { cn } from '@utils/client'
+import type { Feature as FeatureType } from '@types'
 
 import ClickArrow from '~/components/icons/click-arrow'
 import Format from '~/components/icons/format'
 import Schedule from '~/components/icons/schedule'
-
-import { Link } from '@navigation'
-import type { Feature as FeatureType } from '@types'
 
 export default function Feature({ name, link }: FeatureType) {
 	const titlesT = useTranslations('HomePage.Features.Titles')

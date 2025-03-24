@@ -1,9 +1,10 @@
 'use server'
 
-import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
+import { createClient } from '@supabase/server'
 
 export async function denyInvite(formData: FormData) {
 	const inviteId = formData.get('invite_id')?.toString()

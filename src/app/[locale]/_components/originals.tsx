@@ -1,6 +1,7 @@
-import { links, songs } from '@siteConfig'
-import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+
+import { links, songs } from '@siteConfig'
 
 import Button from '~/components/ui/button'
 import Songs from './songs'

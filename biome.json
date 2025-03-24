@@ -1,21 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"$schema": "https://biomejs.dev/schemas/2.0.0-beta/schema.json",
 	"formatter": {
 		"enabled": true
 	},
 	"linter": {
 		"enabled": true,
+		"domains": {
+			"next": "recommended"
+		},
 		"rules": {
-			"recommended": true,
-			"a11y": {
-				"useValidAnchor": "off"
-			},
-			"correctness": {
-				"noUnusedImports": "warn"
-			},
 			"style": {
 				"useForOf": "warn",
 				"useConsistentArrayType": {
@@ -31,12 +24,70 @@
 					}
 				}
 			},
+			"a11y": {
+				"useValidAnchor": "off"
+			},
+			"correctness": {
+				"noUnusedImports": "warn"
+			},
 			"nursery": {
 				"useSortedClasses": {
 					"level": "warn",
 					"fix": "safe",
 					"options": {
 						"functions": ["clsx", "cva", "tw"]
+					}
+				},
+				"noFloatingPromises": "error"
+			}
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							":BUN:",
+							":NODE:",
+							":BLANK_LINE:",
+							["react", "react/**"],
+							["next*", "next*/**"],
+							[
+								"**",
+								"!./**",
+								"!../**",
+								"!~/**",
+								"!@supabase/**",
+								"!@types",
+								"!@env",
+								"!@osu",
+								"!@discord",
+								"!@utils/*",
+								"!@schemas",
+								"!@session",
+								"!@metadata",
+								"!@navigation",
+								"!@siteConfig"
+							],
+							":BLANK_LINE:",
+							[
+								"@supabase/**",
+								"@env",
+								"@osu",
+								"@discord",
+								"@utils/*",
+								"@schemas",
+								"@session",
+								"@metadata",
+								"@navigation",
+								"@siteConfig"
+							],
+							"@types",
+							":BLANK_LINE:"
+						]
 					}
 				}
 			}

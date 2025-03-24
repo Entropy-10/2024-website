@@ -1,11 +1,11 @@
-import * as Select from '@radix-ui/react-select'
-import { utcOptions } from '@siteConfig'
 import { forwardRef } from 'react'
+import * as Select from '@radix-ui/react-select'
+import type { UseFormRegisterReturn } from 'react-hook-form'
+
+import { utcOptions } from '@siteConfig'
+import { cn } from '@utils/client'
 
 import ChevronDownIcon from '~/components/icons/chevron-down'
-
-import { cn } from '@utils/client'
-import type { UseFormRegisterReturn } from 'react-hook-form'
 
 interface UtcPickerProps extends UseFormRegisterReturn {
 	values?: string[]

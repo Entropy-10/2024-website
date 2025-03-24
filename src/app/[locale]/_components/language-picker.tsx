@@ -1,10 +1,12 @@
 'use client'
 
+import Image from 'next/image'
+import { useLocale } from 'next-intl'
+
 import { Link, usePathname } from '@navigation'
 import { localesMetadata } from '@siteConfig'
 import { cn } from '@utils/client'
-import { useLocale } from 'next-intl'
-import Image from 'next/image'
+
 import ChevronDown from '~/components/icons/chevron-down'
 import RadialProgress from '~/components/radial-progress'
 import * as Dropdown from '~/components/ui/dropdown'

@@ -1,8 +1,9 @@
 'use client'
 
-import { usePathname } from '@navigation'
-import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+
+import { usePathname } from '@navigation'
 
 import Button from '~/components/ui/button'
 import { Content, Description, Root, Title } from '~/components/ui/modal'

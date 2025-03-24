@@ -1,12 +1,13 @@
 'use server'
 
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
 import { env } from '@env'
 import { updateTeamAction } from '@schemas'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
 
 export default async function updateTeam(formData: FormData) {
 	const t = await getTranslations('TeamPage.Errors')

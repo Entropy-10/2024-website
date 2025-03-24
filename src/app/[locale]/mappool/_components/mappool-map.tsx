@@ -1,11 +1,13 @@
 'use client'
 
-import { cn } from '@utils/client'
+import { useState } from 'react'
+import Link from 'next/link'
 import { Music, Star, Timer } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import Link from 'next/link'
 import { buildUrl } from 'osu-web.js'
-import { useState } from 'react'
+
+import { cn } from '@utils/client'
+
 import type { Tables } from '~/types/supabase'
 import FallbackImage from './fallback-image'
 

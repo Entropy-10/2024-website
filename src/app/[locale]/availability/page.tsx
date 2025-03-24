@@ -1,6 +1,8 @@
-import { getSession } from '@session'
-import { getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
+import { getSession } from '@session'
+
 import Background from '~/components/ui/background'
 import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'

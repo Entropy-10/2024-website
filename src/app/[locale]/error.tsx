@@ -1,10 +1,10 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
+import { useTranslations } from 'next-intl'
+
 import MessageBox from '~/components/message-box'
 import Background from '~/components/ui/background'
-
 import Button from '~/components/ui/button'
 
 interface ErrorProps {

@@ -1,19 +1,19 @@
 'use client'
 
+import { useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { availabilityForm } from '@schemas'
 import { useForm } from 'react-hook-form'
+import type { z } from 'zod'
 
-import Button from '~/components/ui/button'
-import UtcPicker from '~/components/utc-picker'
-
+import { availabilityForm } from '@schemas'
 import { utcTimes } from '@siteConfig'
 import type { ModalError } from '@types'
-import { useState } from 'react'
-import type { z } from 'zod'
+
 import MessageBox from '~/components/message-box'
 import TextModal from '~/components/text-modal'
+import Button from '~/components/ui/button'
 import Heading from '~/components/ui/heading'
+import UtcPicker from '~/components/utc-picker'
 import { updateAvailability } from '../_actions/update-availability'
 import InputError from './input-error'
 import Label from './label'

@@ -1,7 +1,9 @@
-import { createMetadata } from '@metadata'
-import { pick } from 'lodash'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
+import { pick } from 'lodash'
+
+import { createMetadata } from '@metadata'
+
 import Background from '~/components/ui/background'
 import HeaderDivider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'

@@ -1,14 +1,14 @@
+import { cookies } from 'next/headers'
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
+import { getTranslations } from 'next-intl/server'
+
 import { getDiscordAuthUrl } from '@discord'
 import { osuAuth } from '@osu'
-import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
-
-import { authError } from '../../utils'
-
 import { encrypt } from '@session'
 import { isProd } from '@utils/client'
-import { getTranslations } from 'next-intl/server'
-import type { NextRequest } from 'next/server'
+
+import { authError } from '../../utils'
 
 export async function GET(request: NextRequest) {
 	const searchParams = request.nextUrl.searchParams

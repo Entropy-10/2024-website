@@ -1,12 +1,14 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { Loader2 } from 'lucide-react'
+
 import { rounds } from '@siteConfig'
 import { createClient } from '@supabase/client'
-import type { ModalError } from '@types'
 import { cn } from '@utils/client'
-import { Loader2 } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import type { ModalError } from '@types'
+
 import ChevronDownIcon from '~/components/icons/chevron-down'
 import MessageBox from '~/components/message-box'
 import Button from '~/components/ui/button'
@@ -65,7 +67,7 @@ export default function MappoolContainer({
 			setError(null)
 			setLoading(false)
 		}
-		getMappool()
+		void getMappool()
 	}, [supabase, selectedRound, t])
 
 	return (

@@ -1,8 +1,9 @@
 'use server'
 
+import sharp from 'sharp'
+
 import { env } from '@env'
 import { createClient } from '@supabase/server'
-import sharp from 'sharp'
 
 export default async function uploadImage(formData: FormData) {
 	try {

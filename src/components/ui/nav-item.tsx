@@ -1,12 +1,12 @@
 'use client'
 
+import type { AnchorHTMLAttributes, ReactNode } from 'react'
+import { forwardRef } from 'react'
+import Link from 'next/link'
+import { motion } from 'motion/react'
+
 import { usePathname } from '@navigation'
 import { cn } from '@utils/client'
-import { motion } from 'motion/react'
-import Link from 'next/link'
-import { forwardRef } from 'react'
-
-import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
 interface NavItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	link: string

@@ -1,10 +1,11 @@
 'use server'
 
-import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
 import { z } from 'zod'
+
+import { createClient } from '@supabase/server'
 
 export async function deleteItem(formData: FormData) {
 	const parsedType = z

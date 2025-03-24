@@ -1,15 +1,17 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { acceptedImageTypes, createTeamForm } from '@schemas'
-import type { Availability, ModalError } from '@types'
-import { cn, getFlagPathFromUrl } from '@utils/client'
-import { diff } from 'deep-object-diff'
-import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { diff } from 'deep-object-diff'
 import { useForm } from 'react-hook-form'
 import type { z } from 'zod'
+
+import { acceptedImageTypes, createTeamForm } from '@schemas'
+import { cn, getFlagPathFromUrl } from '@utils/client'
+import type { Availability, ModalError } from '@types'
+
 import ImagePicker from '~/components/image-picker'
 import TextModal from '~/components/text-modal'
 import Button from '~/components/ui/button'
@@ -83,7 +85,7 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 			setValue('flag', flagFile)
 			setIsCurrentImage(true)
 		}
-		getFlagFile()
+		void getFlagFile()
 	}, [setValue, team])
 
 	watch((data, { name }) => {
@@ -255,17 +257,16 @@ export default function Editor({ userId, isCaptain, team }: EditorProps) {
 								{...register('timezone')}
 							/>
 						) : (
-							<>
-								{availability && (
-									<span className='text-nowrap text-xs md:text-sm'>
-										{availability.saturday.startingTime} -{' '}
-										{availability.saturday.endingTime} |{' '}
-										{availability.sunday.startingTime} -{' '}
-										{availability.sunday.endingTime}
-									</span>
-								)}
-							</>
+							availability && (
+								<span className='text-nowrap text-xs md:text-sm'>
+									{availability.saturday.startingTime} -{' '}
+									{availability.saturday.endingTime} |{' '}
+									{availability.sunday.startingTime} -{' '}
+									{availability.sunday.endingTime}
+								</span>
+							)
 						)}
+						)
 					</div>
 
 					{editing && (

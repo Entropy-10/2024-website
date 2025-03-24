@@ -1,9 +1,10 @@
-import { createMetadata } from '@metadata'
+import Image from 'next/image'
 import { getLocale, getTranslations } from 'next-intl/server'
 
+import { createMetadata } from '@metadata'
 import { createClient } from '@supabase/server'
 import { cn } from '@utils/client'
-import Image from 'next/image'
+
 import Background from '~/components/ui/background'
 import Divider from '~/components/ui/divider'
 import Heading from '~/components/ui/heading'

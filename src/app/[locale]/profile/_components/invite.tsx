@@ -1,12 +1,11 @@
-import dayjs from 'dayjs'
+import { headers } from 'next/headers'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
+import dayjs from 'dayjs'
 
 import Button from '~/components/ui/button'
-import { denyInvite } from '../_actions/deny-invite'
-
-import { useTranslations } from 'next-intl'
-import { headers } from 'next/headers'
 import type { Tables } from '~/types/supabase'
+import { denyInvite } from '../_actions/deny-invite'
 
 interface InviteProps {
 	invite: Tables<'invites'> & {
@@ -24,7 +23,7 @@ export default async function Invite({ invite }: InviteProps) {
 	const team = invite.teams
 	const headerList = await headers()
 	const csrfToken = headerList.get('X-CSRF-Token') ?? 'missing'
-	const t = useTranslations('ProfilePage.Invites.Invite')
+	const t = await getTranslations('ProfilePage.Invites.Invite')
 
 	return (
 		<div className='w-[200px] bg-linear-to-r from-light-blue to-lavender p-4 md:w-[250px]'>

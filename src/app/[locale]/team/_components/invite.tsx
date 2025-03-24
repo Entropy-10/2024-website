@@ -1,13 +1,12 @@
-import dayjs from 'dayjs'
-import Image from 'next/image'
-
-import { deleteItem } from '../_actions/delete'
-import DeleteButton from './delete-button'
-
-import { useTranslations } from 'next-intl'
 import { headers } from 'next/headers'
+import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
+import dayjs from 'dayjs'
+
 import { CsrfInput } from '~/components/csrf-input'
 import type { Tables } from '~/types/supabase'
+import { deleteItem } from '../_actions/delete'
+import DeleteButton from './delete-button'
 
 interface InviteProps {
 	isCaptain: boolean
@@ -25,7 +24,7 @@ export default async function Invite({ invite, isCaptain }: InviteProps) {
 	if (!invite.users) return null
 	const headerList = await headers()
 	const csrfToken = headerList.get('X-CSRF-Token') ?? 'missing'
-	const t = useTranslations('TeamPage.Invites.Invite')
+	const t = await getTranslations('TeamPage.Invites.Invite')
 	const user = invite.users
 	let statusColor: string
 

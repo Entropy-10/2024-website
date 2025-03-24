@@ -1,10 +1,11 @@
 'use server'
 
-import { getSession } from '@session'
-import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
+import { getSession } from '@session'
+import { createClient } from '@supabase/server'
 
 export async function invite(formData: FormData) {
 	const teamId = formData.get('team_id')?.toString()

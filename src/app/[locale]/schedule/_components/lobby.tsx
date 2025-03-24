@@ -1,5 +1,7 @@
-import { cn } from '@utils/client'
 import Image from 'next/image'
+
+import { cn } from '@utils/client'
+
 import type { Tables } from '~/types/supabase'
 
 interface LobbyProps {

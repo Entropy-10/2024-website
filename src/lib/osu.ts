@@ -1,7 +1,8 @@
 import 'server-only'
 
+import { Auth, buildUrl, LegacyClient } from 'osu-web.js'
+
 import { env } from '@env'
-import { Auth, LegacyClient, buildUrl } from 'osu-web.js'
 
 export const osuApi = new LegacyClient(env.OSU_API_KEY)
 

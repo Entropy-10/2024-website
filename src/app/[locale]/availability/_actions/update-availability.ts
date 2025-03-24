@@ -1,9 +1,10 @@
 'use server'
 
+import { redirect } from 'next/navigation'
+
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import type { Availability } from '@types'
-import { redirect } from 'next/navigation'
 
 export async function updateAvailability(formData: FormData) {
 	const session = await getSession()

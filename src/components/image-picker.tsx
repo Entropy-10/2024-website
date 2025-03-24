@@ -1,11 +1,11 @@
 'use client'
 
-import { cn } from '@utils/client'
-import { X } from 'lucide-react'
-import Image from 'next/image'
 import { forwardRef, useState } from 'react'
-
+import Image from 'next/image'
+import { X } from 'lucide-react'
 import type { UseFormRegisterReturn } from 'react-hook-form'
+
+import { cn } from '@utils/client'
 
 interface ImagePickerProps extends UseFormRegisterReturn {
 	previewImage: string | null

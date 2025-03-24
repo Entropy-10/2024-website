@@ -1,6 +1,7 @@
+import { getTranslations } from 'next-intl/server'
+
 import { createClient } from '@supabase/server'
 
-import { getTranslations } from 'next-intl/server'
 import {
 	Carousel,
 	CarouselContent,

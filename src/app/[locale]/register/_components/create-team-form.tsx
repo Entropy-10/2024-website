@@ -1,9 +1,13 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { acceptedImageTypes, createTeamForm } from '@schemas'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import type { z } from 'zod'
+
+import { acceptedImageTypes, createTeamForm } from '@schemas'
+import type { ModalError } from '@types'
 
 import ImagePicker from '~/components/image-picker'
 import MessageBox from '~/components/message-box'
@@ -16,10 +20,6 @@ import { uploadImage } from '../_actions/upload-image'
 import Input from './input'
 import InputError from './input-error'
 import Label from './label'
-
-import type { ModalError } from '@types'
-import { useTranslations } from 'next-intl'
-import type { z } from 'zod'
 
 interface CreateTeamFormProps {
 	osuId: string

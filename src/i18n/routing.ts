@@ -1,6 +1,7 @@
-import { locales } from '@siteConfig'
 import { createNavigation } from 'next-intl/navigation'
 import { defineRouting } from 'next-intl/routing'
+
+import { locales } from '@siteConfig'
 
 export const routing = defineRouting({
 	locales,

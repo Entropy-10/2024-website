@@ -1,11 +1,12 @@
-import { links, navItems } from '@siteConfig'
-import { cn } from '@utils/client'
-import { useTranslations } from 'next-intl'
+import { Suspense } from 'react'
 import Image from 'next/image'
+import NextLink from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { Link } from '@navigation'
-import NextLink from 'next/link'
-import { Suspense } from 'react'
+import { links, navItems } from '@siteConfig'
+import { cn } from '@utils/client'
+
 import Challonge from '~/components/icons/challonge'
 import Discord from '~/components/icons/discord'
 import Osu from '~/components/icons/osu'

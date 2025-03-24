@@ -1,8 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { Check, Copy } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import { useState } from 'react'
 
 export default function SponsorCode() {
 	const [success, setSuccess] = useState(false)

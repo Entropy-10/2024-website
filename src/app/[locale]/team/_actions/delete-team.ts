@@ -1,9 +1,10 @@
 'use server'
 
+import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
 import { createClient } from '@supabase/server'
 import { getFlagPathFromUrl } from '@utils/client'
-import { getTranslations } from 'next-intl/server'
-import { redirect } from 'next/navigation'
 
 export async function deleteTeam(formData: FormData) {
 	const teamId = formData.get('team_id')?.toString()

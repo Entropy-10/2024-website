@@ -1,9 +1,10 @@
 'use server'
 
-import { getDiscordAuthUrl } from '@discord'
-import { getBaseUrl } from '@utils/client'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+
+import { getDiscordAuthUrl } from '@discord'
+import { getBaseUrl } from '@utils/client'
 
 export async function relink(formData: FormData) {
 	const pathname = formData.get('pathname')?.toString()

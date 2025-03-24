@@ -1,13 +1,13 @@
-import { createMetadata } from '@metadata'
-import { getSession } from '@session'
-import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 import { redirect } from 'next/navigation'
-
-import Background from '~/components/ui/background'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 
 import { env } from '@env'
+import { createMetadata } from '@metadata'
+import { getSession } from '@session'
 import { isProd } from '@utils/client'
+
 import MessageBox from '~/components/message-box'
+import Background from '~/components/ui/background'
 
 export async function generateMetadata() {
 	const locale = await getLocale()

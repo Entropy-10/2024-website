@@ -1,7 +1,8 @@
+import { cookies } from 'next/headers'
+import { jwtVerify, SignJWT } from 'jose'
+
 import { env } from '@env'
 import type { Session } from '@types'
-import { SignJWT, jwtVerify } from 'jose'
-import { cookies } from 'next/headers'
 
 const key = new TextEncoder().encode(env.SUPABASE_JWT_SECRET)
 

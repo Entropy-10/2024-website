@@ -1,7 +1,8 @@
+import { headers } from 'next/headers'
+import { getTranslations } from 'next-intl/server'
+
 import { getSession } from '@session'
 
-import { getTranslations } from 'next-intl/server'
-import { headers } from 'next/headers'
 import MessageBox from '~/components/message-box'
 import SignInButton from '~/components/sign-in-button'
 import Background from '~/components/ui/background'

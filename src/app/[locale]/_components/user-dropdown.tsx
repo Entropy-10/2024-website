@@ -1,11 +1,11 @@
 import Image from 'next/image'
-
-import ChevronDown from '~/components/icons/chevron-down'
-import * as Dropdown from '~/components/ui/dropdown'
+import { useTranslations } from 'next-intl'
 
 import type { Session } from '@types'
-import { useTranslations } from 'next-intl'
+
+import ChevronDown from '~/components/icons/chevron-down'
 import SignOutButton from '~/components/sign-out-button'
+import * as Dropdown from '~/components/ui/dropdown'
 import NavItem from '~/components/ui/nav-item'
 
 interface UserDropdownProps {

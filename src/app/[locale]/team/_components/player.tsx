@@ -1,8 +1,9 @@
-import { Star } from 'lucide-react'
-import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { Star } from 'lucide-react'
 
 import { cn } from '@utils/client'
+
 import type { Tables } from '~/types/supabase'
 
 interface PlayerProps {
@@ -12,9 +13,10 @@ interface PlayerProps {
 }
 
 export default function Player({ player, userId, isCaptain }: PlayerProps) {
-	if (!player.users) return null
 	const user = player.users
 	const t = useTranslations('TeamPage.Players.Player')
+
+	if (!user) return null
 
 	return (
 		<div

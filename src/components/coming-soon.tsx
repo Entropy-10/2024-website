@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+
 import MessageBox from './message-box'
 import Background from './ui/background'
 

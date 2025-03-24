@@ -1,8 +1,7 @@
-import clsx from 'clsx'
 import { Inter } from 'next/font/google'
-import { twMerge } from 'tailwind-merge'
-
+import clsx from 'clsx'
 import type { ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 export const isProd = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 

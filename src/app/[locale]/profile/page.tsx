@@ -1,10 +1,12 @@
+import { Suspense } from 'react'
+import Image from 'next/image'
+import { notFound, redirect } from 'next/navigation'
+import { getLocale, getTranslations } from 'next-intl/server'
+
 import { createMetadata } from '@metadata'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getLocale, getTranslations } from 'next-intl/server'
-import Image from 'next/image'
-import { notFound, redirect } from 'next/navigation'
-import { Suspense } from 'react'
+
 import ErrorModal from '~/components/error-modal'
 import SectionLoader from '~/components/section-loader'
 import Background from '~/components/ui/background'

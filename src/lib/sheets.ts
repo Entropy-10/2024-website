@@ -1,6 +1,7 @@
-import { env } from '@env'
 import { JWT } from 'google-auth-library'
 import { GoogleSpreadsheet } from 'google-spreadsheet'
+
+import { env } from '@env'
 
 const serviceAccountAuth = new JWT({
 	email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,

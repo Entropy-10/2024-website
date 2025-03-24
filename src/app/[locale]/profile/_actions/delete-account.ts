@@ -1,12 +1,13 @@
 'use server'
 
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+import { Client } from 'osu-web.js'
+
 import { discordAuth } from '@discord'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
-import { Client } from 'osu-web.js'
 
 export async function deleteAccount(csrfToken: string) {
 	const session = await getSession()

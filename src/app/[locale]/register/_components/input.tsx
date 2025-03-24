@@ -1,7 +1,7 @@
-import { cn } from '@utils/client'
 import { forwardRef } from 'react'
-
 import type { UseFormRegisterReturn } from 'react-hook-form'
+
+import { cn } from '@utils/client'
 
 const Input = forwardRef<HTMLInputElement, UseFormRegisterReturn>(
 	({ ...props }, forwardedRef) => (

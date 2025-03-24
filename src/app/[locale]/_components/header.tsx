@@ -1,10 +1,11 @@
-import { getSession } from '@session'
-import { navItems } from '@siteConfig'
-import { createClient } from '@supabase/server'
+import { Suspense } from 'react'
 import { getTranslations } from 'next-intl/server'
 
 import { Link } from '@navigation'
-import { Suspense } from 'react'
+import { getSession } from '@session'
+import { navItems } from '@siteConfig'
+import { createClient } from '@supabase/server'
+
 import Logo from '~/components/icons/logo'
 import SignInButton from '~/components/sign-in-button'
 import NavItem from '~/components/ui/nav-item'

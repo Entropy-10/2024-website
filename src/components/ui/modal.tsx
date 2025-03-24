@@ -1,11 +1,11 @@
-import * as AlertDialog from '@radix-ui/react-alert-dialog'
-import { cn } from '@utils/client'
+import type { ComponentPropsWithoutRef, ElementRef } from 'react'
 import { forwardRef } from 'react'
+import * as AlertDialog from '@radix-ui/react-alert-dialog'
+import type { VariantProps } from 'class-variance-authority'
+
+import { cn } from '@utils/client'
 
 import { buttonVariants } from './button'
-
-import type { VariantProps } from 'class-variance-authority'
-import type { ComponentPropsWithoutRef, ElementRef } from 'react'
 
 const Root = AlertDialog.Root
 

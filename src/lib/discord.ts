@@ -1,16 +1,17 @@
 import 'server-only'
 
 import { REST } from '@discordjs/rest'
-import { env } from '@env'
-import { createClient } from '@supabase/server'
-import { Routes } from 'discord-api-types/v10'
-import Auth, { DiscordHTTPError } from 'discord-oauth2'
-
 import type {
 	APIMessage,
 	RESTPostAPIChannelMessageJSONBody
 } from 'discord-api-types/v10'
+import { Routes } from 'discord-api-types/v10'
 import type OAuth from 'discord-oauth2'
+import Auth, { DiscordHTTPError } from 'discord-oauth2'
+
+import { env } from '@env'
+import { createClient } from '@supabase/server'
+
 import type { Tables } from '~/types/supabase'
 
 const rest = new REST({ version: '10' }).setToken(env.BOT_TOKEN)

@@ -1,11 +1,12 @@
 'use server'
 
+import { redirect } from 'next/navigation'
+import { getTranslations } from 'next-intl/server'
+
 import { getGuildMember, sendMessage, updateGuildMember } from '@discord'
 import { env } from '@env'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getTranslations } from 'next-intl/server'
-import { redirect } from 'next/navigation'
 
 export async function verify() {
 	const session = await getSession()

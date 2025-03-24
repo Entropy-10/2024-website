@@ -1,11 +1,11 @@
-import { env } from '@env'
-import { StatusColor } from '@types'
-import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
+
+import { env } from '@env'
+import type { UptimeStatusPage } from '@types'
+import { StatusColor } from '@types'
 
 import StatusIcon from '~/components/icons/status'
-
-import type { UptimeStatusPage } from '@types'
 
 export default async function Status() {
 	const t = await getTranslations('Status')

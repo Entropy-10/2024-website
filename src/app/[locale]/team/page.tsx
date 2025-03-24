@@ -1,12 +1,13 @@
+import { Suspense } from 'react'
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
+import { NextIntlClientProvider } from 'next-intl'
+import { getLocale, getMessages, getTranslations } from 'next-intl/server'
+
 import { createMetadata } from '@metadata'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
-import { getLocale, getMessages, getTranslations } from 'next-intl/server'
-import { headers } from 'next/headers'
-import { redirect } from 'next/navigation'
-import { Suspense } from 'react'
 
-import { NextIntlClientProvider } from 'next-intl'
 import MessageBox from '~/components/message-box'
 import SectionLoader from '~/components/section-loader'
 import Background from '~/components/ui/background'

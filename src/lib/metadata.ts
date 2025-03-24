@@ -1,7 +1,7 @@
-import { getBaseUrl } from '@utils/client'
-
 import type { Metadata } from 'next'
 import type { TemplateString } from 'next/dist/lib/metadata/types/metadata-types'
+
+import { getBaseUrl } from '@utils/client'
 
 interface MetadataOptions {
 	locale: string

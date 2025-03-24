@@ -1,9 +1,10 @@
 'use client'
 
-import { createClient } from '@supabase/client'
-import { SearchIcon, X } from 'lucide-react'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { SearchIcon, X } from 'lucide-react'
+
+import { createClient } from '@supabase/client'
 
 import ErrorModal from '~/components/error-modal'
 import { invite } from '../_actions/invite'

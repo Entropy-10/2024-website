@@ -1,14 +1,14 @@
+import { cookies } from 'next/headers'
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
+import { getTranslations } from 'next-intl/server'
+
 import { discordAuth } from '@discord'
 import { getSession } from '@session'
 import { createClient } from '@supabase/server'
 import { getBaseUrl } from '@utils/client'
-import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
 
 import { authError, getDiscordAvatarUrl } from '../../utils'
-
-import { getTranslations } from 'next-intl/server'
-import type { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
 	const session = await getSession()

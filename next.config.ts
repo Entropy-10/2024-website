@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url'
-import { createJiti } from 'jiti'
+
 import createNextIntlPlugin from 'next-intl/plugin'
+import { createJiti } from 'jiti'
 import ReactComponentName from 'react-scan/react-component-name/webpack'
 
 const jiti = createJiti(fileURLToPath(import.meta.url))

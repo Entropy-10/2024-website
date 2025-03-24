@@ -1,7 +1,9 @@
 'use client'
 
-import { cn } from '@utils/client'
 import { useEffect, useState } from 'react'
+
+import { cn } from '@utils/client'
+
 import { signOut } from '~/lib/actions'
 
 interface SignOutButtonProps {

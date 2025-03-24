@@ -1,5 +1,6 @@
-import { useTranslations } from 'next-intl'
 import { use } from 'react'
+import { useTranslations } from 'next-intl'
+
 import MessageBox from '~/components/message-box'
 import SignInButton from '~/components/sign-in-button'
 import Background from '~/components/ui/background'

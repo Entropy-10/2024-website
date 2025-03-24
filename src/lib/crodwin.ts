@@ -1,4 +1,5 @@
 import Crodwin from '@crowdin/crowdin-api-client'
+
 import { env } from '@env'
 
 export const crowdinApi = new Crodwin({ token: env.CROWDIN_TOKEN })
