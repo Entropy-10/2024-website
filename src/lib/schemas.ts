@@ -24,7 +24,7 @@ export const createTeamForm = z.object({
 		.regex(/^\w+$/, 'Acronym only allows letters or numbers'),
 	timezone: z.string().toUpperCase().min(1, 'Timezone is required'),
 	flag: z
-		.custom<FileList | File>()
+		.custom<File>()
 		.transform(file => (file instanceof FileList ? file.item(0) : file))
 		.refine(file => !!file, 'Flag is required')
 		.refine(file => !!file && file.size <= 5000000, 'Max image size is 5MB')

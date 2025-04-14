@@ -13,9 +13,9 @@ export default function Countdown({ timeLeft }: CountdownProps) {
 
 	return (
 		<div className='flex font-black text-4xl xl:w-full'>
-			<CountdownNumber number={days} />:
-			<CountdownNumber number={hours} />:
-			<CountdownNumber number={minutes} />:
+			<CountdownNumber number={days} />
+			<CountdownNumber number={hours} />
+			<CountdownNumber number={minutes} />
 			<CountdownNumber number={seconds} />
 		</div>
 	)

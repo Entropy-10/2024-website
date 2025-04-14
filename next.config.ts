@@ -2,7 +2,6 @@ import { fileURLToPath } from 'node:url'
 
 import createNextIntlPlugin from 'next-intl/plugin'
 import { createJiti } from 'jiti'
-import ReactComponentName from 'react-scan/react-component-name/webpack'
 
 const jiti = createJiti(fileURLToPath(import.meta.url))
 jiti.esmResolve('./src/env')
@@ -27,9 +26,5 @@ export default withNextIntl({
 			{ protocol: 'https', hostname: 'dtoyeiqtecliyympsgji.supabase.co' },
 			{ protocol: 'https', hostname: 'avxmlbhyydzgmiwadyja.supabase.co' }
 		]
-	},
-	webpack: config => {
-		config.plugins.push(ReactComponentName({}))
-		return config
 	}
 })
