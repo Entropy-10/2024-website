@@ -14,9 +14,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getBaseUrl() {
-	if (isProd) return 'https://2024.test-open.com'
-	if (process.env.NEXT_PUBLIC_VERCEL_URL)
-		return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  const prodUrl = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+  const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+	if (prodUrl) return `https://${prodUrl}`
+	if (vercelUrl) return `https://${vercelUrl}`
 	return `http://localhost:${process.env.PORT ?? 3000}`
 }
 
