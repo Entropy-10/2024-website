@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
 import { Music, Star, Timer } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
+import Link from 'next/link'
 import { buildUrl } from 'osu-web.js'
+import { useState } from 'react'
 
 import { cn } from '@utils/client'
 
@@ -15,38 +15,38 @@ interface MappoolMapProps {
 	map: Tables<'maps'>
 }
 
+enum ModColor {
+	LM = '#F9A0BE',
+	NM = '#5E72EB',
+	HD = '#FCC164',
+	HR = '#F27F85',
+	DT = '#8874ED',
+	TB = '#5D5048'
+}
+
+enum LazerMods {
+	TR = 'Transform',
+	WG = 'Wiggle',
+	GR = 'Grow',
+	TC = 'Traceable',
+	BR = 'Barrel Roll',
+	RP = 'Repel',
+	BU = 'Bubbles',
+	DP = 'Depth',
+	AD = 'Approach Different',
+	DF = 'Deflate',
+	SY = 'Synesthesia',
+	SI = 'Spin In',
+	NS = 'No Scope',
+	MG = 'Magnetized',
+	FR = 'Freeze Frame',
+	AS = 'Adaptive Speed',
+	WU = 'Wind Up',
+	WD = 'Wind Down'
+}
+
 export default function MappoolMap({ map }: MappoolMapProps) {
 	const [showModInfo, setShowModInfo] = useState(false)
-
-	enum ModColor {
-		LM = '#F9A0BE',
-		NM = '#5E72EB',
-		HD = '#FCC164',
-		HR = '#F27F85',
-		DT = '#8874ED',
-		TB = '#5D5048'
-	}
-
-	enum LazerMods {
-		TR = 'Transform',
-		WG = 'Wiggle',
-		GR = 'Grow',
-		TC = 'Traceable',
-		BR = 'Barrel Roll',
-		RP = 'Repel',
-		BU = 'Bubbles',
-		DP = 'Depth',
-		AD = 'Approach Different',
-		DF = 'Deflate',
-		SY = 'Synesthesia',
-		SI = 'Spin In',
-		NS = 'No Scope',
-		MG = 'Magnetized',
-		FR = 'Freeze Frame',
-		AS = 'Adaptive Speed',
-		WU = 'Wind Up',
-		WD = 'Wind Down'
-	}
 
 	return (
 		<div
